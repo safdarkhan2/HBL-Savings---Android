@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light_gray"
+    android:paddingBottom="16dp">
+
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/direct_account_inline_label"
+        android:textColor="@color/gray_text"
+        android:textSize="@dimen/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/debit_account_short_intro_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/direct_account_inline_label"
+        android:textColor="@color/gray_text_2"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/product_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/debit_account_short_intro_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debit_account_short_intro_tv">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/product_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/product_label"
+            android:textColor="@color/hbl_main_green"
+            android:textSize="@dimen/text_size_12" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/product_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:weightSum="20">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fund_spinner"
+                style="@style/MyThemeOverlayFilledPadding"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="19"
+                android:background="@null"
+                android:entries="@array/boolean_array"
+                android:spinnerMode="dropdown"
+                android:textAlignment="viewStart" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/your_msg_hint"
+                android:src="@drawable/ic_arrow_down" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/online_banking_expandable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/product_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_layout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/transfer_to"
+            style="@style/My.TextInputLayout.FilledBox.Padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/transfer_to_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/transfer_to_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ibft_reference_number"
+            style="@style/My.TextInputLayout.FilledBox.Padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ibft_transfer_number_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transfer_to">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ibft_reference_number_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/ibft_receipt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ibft_receipt_label"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/title"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibft_reference_number"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/add_ibft_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibft_reference_number"
+            app:srcCompat="@drawable/ic_add" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/payment_instruction_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/online_banking_expandable_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/online_banking_expandable_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/payment_instruction_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/light_green"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                android:text="@string/payment_instruction_label"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/direct_account_inline_label"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/payment_instruction_title_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payment_instruction_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_green"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:drawablePadding="20dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/disclaimer_label"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/disclaimer_body_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/disclaimer_body_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/investment_limit_msg_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/limit_allowed_msg_label"
+        android:textAlignment="center"
+        android:textColor="@color/gray_text_2"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/invest_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginTop="16dp"
+        android:enabled="true"
+        android:text="@string/invest_btn_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/investment_limit_msg_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.CustomerInformation.CustomerInformationMainFragment">
+
+    <include
+        android:id="@+id/top_header_layout"
+        layout="@layout/top_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:contentDescription="@string/professional_info_label"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_header_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/personal_info_cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_background">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_base_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.06" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_base_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.94" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="89dp" />
+
+            <TextView
+                android:id="@+id/personal_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/personal_info_title"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toStartOf="@+id/right_base_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/horizonal_bar_view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/hbl_light_green"
+                app:layout_constraintEnd_toStartOf="@+id/right_base_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/personal_info_tv" />
+
+            <TextView
+                android:id="@+id/upload_front_back_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_edit"
+                android:text="@string/upload_front_back_cnic_label"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                app:layout_constraintBottom_toTopOf="@+id/guideline11"
+                app:layout_constraintEnd_toEndOf="@id/right_base_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/personal_info_tv" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_bg"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/personal_info_guideline"
+                app:layout_constraintEnd_toStartOf="@+id/right_base_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline11">
+
+                <ImageView
+                    android:id="@+id/switch_side"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingVertical="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/front_card_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_idcard_side_change" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/front_card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:contentDescription="@string/gender_label"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/switch_side"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/front_cnic_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_id_card" />
+
+                </androidx.cardview.widget.CardView>
+                <!--
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/front_cnic_iv"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:contentDescription="@string/gender_label"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/switch_side"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_id_card" />
+                -->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/personal_info_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="273dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/right_base_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toTopOf="@+id/personal_info_guideline">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cnic_nicop_no"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/identity_number">
+
+                    <br.com.sapereaude.maskedEditText.MaskedEditText
+                        android:id="@+id/cnic_nicop_no_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title"
+                        app:allowed_chars="1234567890"
+                        app:mask="#####-#######-#" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cnic_nicop_issue_date"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/cnic_nicop_issue_date"
+                    app:endIconContentDescription="@string/cnic_nicop_issue_date"
+                    app:endIconDrawable="@drawable/ic_calender"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cnic_nicop_issue_date_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cnic_expiry_date"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/cnic_nicp_expiry_label"
+                    app:endIconContentDescription="@string/cnic_nicp_expiry_label"
+                    app:endIconDrawable="@drawable/ic_calender"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cnic_expiry_date_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cnic_expiry_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/lifetime_expiry_label"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cnic_name"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name_as_per_cnic_label">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cnic_name_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/father_spouse_name"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/father_spouse_name_label">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/father_spouse_name_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gender_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/gender_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/gender_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/gender_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/date_of_birth"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/date_of_birth_label"
+                    app:endIconContentDescription="@string/date_of_birth_label"
+                    app:endIconDrawable="@drawable/ic_calender"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/date_of_birth_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mother_maiden_name"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/mother_maiden_name_label">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mother_maiden_name_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/guardian_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/name_of_guardian"
+                        style="@style/My.TextInputLayout.FilledBox.Padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/name_of_guardian">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/name_of_guardian_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_background"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guardian_relationship_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/relationship_with_minor"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/guardian_relationship_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/guardian_relationship_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:entries="@array/select_array"
+                            android:spinnerMode="dropdown" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_arrow_down" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/hbl_main_green" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/guardian_cnic_no"
+                        style="@style/My.TextInputLayout.FilledBox.Padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/cnic_of_guardian">
+
+                        <br.com.sapereaude.maskedEditText.MaskedEditText
+                            android:id="@+id/guardian_cnic_no_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_background"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title"
+                            app:allowed_chars="1234567890"
+                            app:mask="#####-#######-#" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/father_name_of_guardian"
+                        style="@style/My.TextInputLayout.FilledBox.Padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/father_name_of_guardian">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/father_name_of_guardian_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_background"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/date_of_birth_of_guardian"
+                        style="@style/My.TextInputLayout.FilledBox.Padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/dob_of_guardian"
+                        app:endIconContentDescription="@string/date_of_birth_label"
+                        app:endIconDrawable="@drawable/ic_calender"
+                        app:endIconMode="custom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/guardian_date_of_birth_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_background"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:inputType="date"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guardian_country_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/country_of_guardian"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/guardian_country_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/guardian_country_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:entries="@array/select_array"
+                            android:spinnerMode="dropdown" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_arrow_down" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/hbl_main_green" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guardian_city_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/city_of_guardian"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/guardian_city_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/guardian_city_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:entries="@array/select_array"
+                            android:spinnerMode="dropdown" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_arrow_down" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/hbl_main_green" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/guardian_address"
+                        style="@style/My.TextInputLayout.FilledBox.Padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/address_of_guardian">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/guardian_address_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_background"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/guardian_cnic_expiry_date"
+                        style="@style/My.TextInputLayout.FilledBox.Padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/cnic_expiry_of_guardian"
+                        app:endIconContentDescription="@string/cnic_nicp_expiry_label"
+                        app:endIconDrawable="@drawable/ic_calender"
+                        app:endIconMode="custom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/guardian_cnic_expiry_date_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_background"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:inputType="date"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email_address"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/email_address_label">
+
+                    <com.hbl.amc.utils.CustomKeyBoardControlEditText
+                        android:id="@+id/email_address_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/address"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/address_label">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/city"
+                                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:hint="@string/city_label">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/city_et"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/light_background"
+                                        android:singleLine="true"
+                                        android:textColor="@color/gray_text"
+                                        android:textSize="@dimen/title" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                -->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/country_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/country_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/country_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/country_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/city_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/city_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/city_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/city_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/residential_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:checked="true"
+                    android:text="@string/mailing_address_is_same_label"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mailing_address"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mailing_address__label">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mailing_address_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mailing_country_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/country_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mailing_country_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/mailing_country_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:id="@+id/mailing_country_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mailing_city_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/city_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mailing_city_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/mailing_city_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:id="@+id/mailing_city_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <!--
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/country"
+                                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:hint="@string/country_label">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/country_et"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/light_background"
+                                        android:singleLine="true"
+                                        android:textColor="@color/gray_text"
+                                        android:textSize="@dimen/title" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                -->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/religion_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/religion_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/religion_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/religion_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/education"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/education">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/education_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mobile_number_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/mobile_label"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/cc_picker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccpDialog_textColor="@color/gray_text"
+                        app:ccp_textSize="@dimen/title" />
+
+                    <com.hbl.amc.utils.CustomKeyBoardControlEditText
+                        android:id="@+id/mobile_no_et"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/light_background"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mobile_number_error_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/mobile_error"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="@dimen/text_size_11"
+                    android:visibility="gone" />
+
+                <!--
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/mobile_no"
+                                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:hint="@string/mobile_label">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/mobile_no_et"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/light_background"
+                                        android:inputType="phone"
+                                        android:singleLine="true"
+                                        android:textColor="@color/gray_text"
+                                        android:textSize="@dimen/title" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                -->
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ownership_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/mobile_ownership_label"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ownership_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/mobile_ownership_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ownership_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="@string/mobile_ownership_info"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/text_size_10"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/service_provider_bill_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/service_provider_bill_label"
+                                android:textColor="@color/gray_text"
+                                android:textSize="@dimen/title" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/service_provider_bill_detail"
+                                android:textColor="@color/gray_text"
+                                android:visibility="gone"
+                                android:textSize="@dimen/text_size_10" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/add_service_provider_bill_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            app:srcCompat="@drawable/ic_add" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:id="@+id/service_pv"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/gray_text" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/affidavit_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/download_affidavit_btn"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/affidavit_label"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/download_affidavit_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_toStartOf="@+id/add_affidavit_btn"
+                            app:srcCompat="@drawable/ic_download_icon" />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/upload_affidavit_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/add_affidavit_btn"
+                            app:srcCompat="@drawable/ic_add" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="149dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/light_gray_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottom_guideline" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/send_otp_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="@dimen/margin_50"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@drawable/button_states"
+        android:enabled="false"
+        android:text="@string/send_otp_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_nav_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="50dp" />
+
+    <TextView
+        android:id="@+id/personal_info_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/half_rounded_yellow"
+        android:gravity="center"
+        android:text="@string/personal_info_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/professional_info_label_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_nav_guideline" />
+
+    <TextView
+        android:id="@+id/professional_info_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="2dp"
+        android:background="@drawable/half_rounded_gray"
+        android:gravity="center"
+        android:text="@string/professional_info_label"
+        android:textColor="@color/gray_text"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bank_account_label_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/personal_info_label_tv"
+        app:layout_constraintTop_toTopOf="@+id/bottom_nav_guideline" />
+
+    <TextView
+        android:id="@+id/bank_account_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/half_rounded_gray"
+        android:gravity="center"
+        android:text="@string/bank_account_info_label"
+        android:textColor="@color/gray_text"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/professional_info_label_tv"
+        app:layout_constraintTop_toTopOf="@+id/bottom_nav_guideline" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

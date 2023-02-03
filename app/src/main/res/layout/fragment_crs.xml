@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/crs_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/crs_title"
+            android:textAllCaps="true"
+            android:textColor="@color/hbl_main_green"
+            android:textSize="@dimen/title"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/hbl_main_green" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tax_residence_country_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/country_of_tax_residence"
+            android:textColor="@color/hbl_main_green"
+            android:textSize="@dimen/text_size_12" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/tax_residence_country_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/tax_residence_country_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:entries="@array/boolean_array"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_arrow_down" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/light_gray_bg" />
+
+        <LinearLayout
+            android:id="@+id/city_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/city_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/city"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/city_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/city_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:entries="@array/boolean_array"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/light_gray_bg" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tin_no_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/tin_no_question"
+            android:textColor="@color/hbl_main_green"
+            android:textSize="@dimen/text_size_12"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:id="@+id/tin_no_radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/tin_no_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="100dp"
+                android:text="@string/yes"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/tin_no_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tin_no_input_layout"
+            style="@style/My.TextInputLayout.FilledBox.Padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:hint="@string/tin_no"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tin_no_textedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_background"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/reason_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/reason_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/reason"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/reasons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/reasons_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:entries="@array/crs_reasons"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/light_gray_bg" />
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="30dp"
+        android:backgroundTint="@drawable/button_states"
+        android:backgroundTintMode="src_in"
+        android:enabled="false"
+        android:text="@string/continue1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        android:textStyle="bold"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/status_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/status_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continue_btn">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/kyc_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_green"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:text="@string/kyc_bracket"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1"
+            app:drawableStartCompat="@drawable/ic_check_white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rpq_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_green"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:text="@string/rpq"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1"
+            app:drawableStartCompat="@drawable/ic_check_white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fatca_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="2dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_green"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:text="@string/fatca"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1"
+            app:drawableStartCompat="@drawable/ic_check_white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_yellow"
+            android:gravity="center"
+            android:text="@string/crs"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

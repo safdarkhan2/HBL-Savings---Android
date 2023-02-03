@@ -1,0 +1,243 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlinx-serialization'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.hbl.amc"
+        minSdk 26
+        targetSdk 30
+        versionCode 21
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+//            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            shrinkResources true
+            minifyEnabled true
+//            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'default'
+    productFlavors {
+        liveApp {
+            dimension 'default'
+
+//            Live Production URL
+            buildConfigField("String", "BASE_URL", "\"https://digital.hblsavings.com:9094/api/\"")
+            buildConfigField("String", "BASE_URL_NIFT_PAYMENT", "\"https://digital.hblsavings.com:9091/\"")
+
+//          Live UAT Address
+//            buildConfigField("String", "BASE_URL", "\"https://uat-digital.hblsavings.com:9091/api/\"")
+//            buildConfigField("String", "BASE_URL_NIFT_PAYMENT", "\"https://uat-digital.hblsavings.com:9090/\"")
+
+            //            new ip for client build
+//            buildConfigField("String", "BASE_URL", "\"http://202.163.111.198:9091/api/\"")
+//            buildConfigField("String", "BASE_URL_NIFT_PAYMENT", "\"http://202.163.111.198:9090/\"")
+//            buildConfigField("String", "BASE_URL_NIFT_PAYMENT", "\"http://18.144.44.128:8080/\"")
+//            buildConfigField("String", "BASE_URL", "\"http://18.144.44.128:8082/api/\"")
+//            buildConfigField("String", "BASE_URL", "\"http://203.215.173.211:33895/api/\"")
+//            buildConfigField("String", "BASE_URL", "\"http://202.69.38.66:33895/api/\"")
+        }
+
+        stagingApp {
+            dimension 'default'
+            //public ip for home use or any other place outside office
+            buildConfigField("String", "BASE_URL", "\"http://202.69.38.66:33892/api/\"")
+        }
+
+        stagingLocalApp {
+            dimension 'default'
+//            local ip for office use only
+            buildConfigField("String", "BASE_URL", "\"http://172.28.5.153:8081/api/\"")
+//            buildConfigField("String", "BASE_URL", "\"http://172.28.5.153:3000/api/\"")
+        }
+
+        /*QATestingApp {
+            dimension 'default'
+            buildConfigField("String", "BASE_URL", "\"http://202.69.38.66:33896/api/\"")
+        }*/
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    //for temporary check for release build
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:$app_compat"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_lyt"
+    implementation "com.google.android.material:material:$material_design"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+    implementation "androidx.cardview:cardview:1.0.0"
+    // Jetpack Navigation Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Koin for Android
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
+// No more koin-android-viewmodel, koin-android-scope, koin-android-fragment
+
+// Java Compatibility
+    implementation "io.insert-koin:koin-android-compat:$koin_version"
+// Jetpack WorkManager
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+// Navigation Graph
+    implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
+// Jetpack Compose
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
+    // Koin AndroidX Scope features
+    /*implementation "io.insert-koin:koin-androidx-scope:$koin_version"
+// Koin AndroidX ViewModel features
+    implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
+// Koin AndroidX Fragment features
+    implementation "io.insert-koin:koin-androidx-fragment:$koin_version"
+// Koin AndroidX WorkManager
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+// Koin AndroidX Experimental features
+    implementation "io.insert-koin:koin-androidx-ext:$koin_version"*/
+
+    //Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$http_logging"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_fasterxml"
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$couroutines_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutines_adapter"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //LeakCanary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanary"
+
+    //Lifecycle
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extension"
+    //lifecycle extensions are replaced by below lifecycle libraries
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    // optional - helpers for implementing LifecycleOwner in a Service
+    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    // optional - ReactiveStreams support for LiveData
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+
+    //-------------------------- Third Party Libraries ----------------------
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+    //Expandable TextView
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+    implementation 'ru.egslava:MaskedEditText:1.0.5'
+    implementation 'com.hbb20:ccp:2.5.4'
+    implementation 'com.basgeekball:awesome-validation:4.3'
+//    implementation 'com.github.salehyarahmadi:FileAndFolderPicker:1.0.4'
+//    implementation 'yogesh.firzen:FilesLister:1.0.1.g'
+//    implementation 'yogesh.firzen:MukkiyaSevaigal:1.0.6'
+//    implementation "org.apache.commons:commons-io:1.3.2"
+    implementation 'com.github.Drjacky:ImagePicker:2.1.14'
+//    implementation 'com.github.yalantis:ucrop:2.2.7'
+
+    //Biometric verification
+    implementation('androidx.biometric:biometric:1.1.0')
+
+    //Data Store Shared Preferences
+    implementation "androidx.datastore:datastore:1.0.0"
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    //Pie Chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+//    implementation 'com.google.mlkit:object-detection:16.2.7'
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-ml-vision'
+    implementation 'com.google.firebase:firebase-ml-vision-object-detection-model:19.0.5'
+    implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'androidx.webkit:webkit:1.2.0'
+
+//    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:17.0.0'
+//    implementation project(path: ':liveDetectionlibrary')
+
+
+//    implementation 'com.github.zynkware:Document-Scanning-Android-SDK:1.0.1'
+//
+//    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+//    implementation 'com.github.hannesa2:LiveEdgeDetection:1.8.15'
+
+    //---------------------------- TESTING ----------------------------//
+
+    androidTestImplementation "androidx.test.ext:junit:$junit_x_ext"
+    androidTestImplementation "androidx.test:rules:$testx_rules"
+    androidTestImplementation "android.arch.core:core-testing:$android_arch_core_testing"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$mockwebserver_version"
+    androidTestImplementation "io.insert-koin:koin-test:$koin_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_contrib"
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    testImplementation "androidx.test.ext:junit:$junit_x_ext"
+    testImplementation "android.arch.core:core-testing:$android_arch_core_testing"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mockwebserver_version"
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation "com.google.truth:truth:1.1.3"
+
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

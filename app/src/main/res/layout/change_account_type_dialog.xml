@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/rounded_bg">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/close_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_close_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/icon_group"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/close_btn">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="100dp"
+                    app:srcCompat="@drawable/ic_white_circle" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:elevation="6dp"
+                    app:srcCompat="@drawable/ic_alert"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/vps_funds"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/heading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_group" />
+
+            <TextView
+                android:id="@+id/detail_msg_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:text="@string/dummy_text"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/half_rounded_green_outline_bg"
+                android:text="@string/disagree"
+                android:textAllCaps="true"
+                android:lines="1"
+                android:autoSizeMinTextSize="@dimen/text_size_10"
+                android:autoSizeMaxTextSize="@dimen/med_text_size1"
+                app:layout_constraintHorizontal_weight="0.5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/hbl_main_green"
+                android:autoSizeTextType="uniform"
+                android:autoSizeStepGranularity="1sp"
+                app:layout_constraintEnd_toStartOf="@+id/verify_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_msg_tv" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/verify_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/normal_btn_2"
+                android:text="@string/agree"
+                android:autoSizeTextType="uniform"
+                android:autoSizeStepGranularity="1sp"
+                app:layout_constraintHorizontal_weight="0.5"
+                android:textAllCaps="true"
+                android:lines="1"
+                android:autoSizeMinTextSize="@dimen/text_size_10"
+                android:autoSizeMaxTextSize="@dimen/med_text_size1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cancel_btn"
+                app:layout_constraintTop_toBottomOf="@+id/detail_msg_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

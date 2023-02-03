@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:cardElevation="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/toolbar_inner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/back_iv"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/guides"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/heading2" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10dp"
+            android:background="@color/light_background"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/calculator_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_bg_2"
+                android:elevation="4dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/calculator"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.8"
+                    android:textSize="@dimen/title" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/calculator_dropdown_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="25dp"
+                    android:rotation="270"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/calculator_sub_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="2dp"
+                android:background="@drawable/rounded_bg_2"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_bg_light_green_smallradius"
+                    android:elevation="2dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/sip_calculator">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/sip_calculator"
+                        android:textColor="@color/gray_text"
+                        android:layout_weight="0.8"
+                        android:textSize="@dimen/title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="25dp"
+                        android:rotation="270"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_bg_light_green_smallradius"
+                    android:elevation="2dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/feature_value_calculator">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/future_value_calculator"
+                        android:textColor="@color/gray_text"
+                        android:layout_weight="0.8"
+                        android:textSize="@dimen/title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="25dp"
+                        android:rotation="270"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_bg_light_green_smallradius"
+                    android:elevation="2dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/mutual_funds_tax_calculator">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/mutual_funds_tax_savings_calculator"
+                        android:textColor="@color/gray_text"
+                        android:layout_weight="0.8"
+                        android:textSize="@dimen/title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="25dp"
+                        android:rotation="270"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_bg_light_green_smallradius"
+                    android:elevation="2dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/vps_calculator">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/vps_tax_savings_calculator"
+                        android:textColor="@color/gray_text"
+                        android:layout_weight="0.8"
+                        android:textSize="@dimen/title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="25dp"
+                        android:rotation="270"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_bg_light_green_smallradius"
+                    android:elevation="2dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/retirement_income_calculator">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/retirement_income_calculator"
+                        android:textColor="@color/gray_text"
+                        android:layout_weight="0.8"
+                        android:textSize="@dimen/title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="25dp"
+                        android:rotation="270"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_bg_2"
+                android:elevation="4dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/fund_prices"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.8"
+                    android:textSize="@dimen/title" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="25dp"
+                    android:rotation="270"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/documents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_bg_2"
+                android:elevation="4dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/documents"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.8"
+                    android:textSize="@dimen/title" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="25dp"
+                    android:rotation="270"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/videos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_bg_2"
+                android:elevation="4dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/videos"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.8"
+                    android:textSize="@dimen/title" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="25dp"
+                    android:rotation="270"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_bg_2"
+                android:elevation="4dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/faqs"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.8"
+                    android:textSize="@dimen/title" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="25dp"
+                    android:rotation="270"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

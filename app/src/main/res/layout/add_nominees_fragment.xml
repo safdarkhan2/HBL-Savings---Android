@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/app_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/app_bar"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_nominee_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/know_you_customer_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/next_of_kin_info"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/hbl_main_green" />
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/full_name_cnic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/full_name"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title"
+                    android:id="@+id/full_name_cnic_et"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/relationship"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:id="@+id/relationship_layout">
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/relationship_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:entries="@array/relationship_array"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray_text"/>
+            <!--
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/relatioship"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/relationship">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/light_background"
+                                android:singleLine="true"
+                                android:textColor="@color/gray_text"
+                                android:textSize="@dimen/title" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+            -->
+
+<!--
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/emergency_contact_no"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title"
+                    android:inputType="phone"
+                    android:id="@+id/share_et"
+                    android:digits="1234567890"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mobile_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Contact no."
+                android:textAllCaps="true"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/margin_20">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/cc_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccpDialog_textColor="@color/gray_text"
+                    app:ccp_textSize="@dimen/title" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mobile_no_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/light_background"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:background="@color/hbl_main_green" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mobile_number_error_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:text="@string/mobile_error"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="@dimen/text_size_11"
+                android:visibility="gone" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cnic_nicop_bform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/identity_number"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title"
+                    android:id="@+id/cnic_nicop_bform_et"
+                    app:mask="#####-#######-#"
+                    app:allowed_chars="1234567890"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cnic_issue_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/cnic_nicop_issue_date"
+                app:endIconDrawable="@drawable/ic_calender"
+                app:endIconMode="custom"
+                app:endIconContentDescription="@string/cnic_nicop_issue_date"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:singleLine="true"
+                    android:textSize="@dimen/title"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cnic_expiry_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/cnic_nicp_expiry_label"
+                app:endIconDrawable="@drawable/ic_calender"
+                app:endIconMode="custom"
+                app:endIconContentDescription="@string/cnic_nicop_issue_date"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:singleLine="true"
+                    android:textSize="@dimen/title"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cnic_issue_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cnic_nicop_issue_date"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cnic_issue_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:drawableEnd="@drawable/ic_calender"
+                android:inputType="date"
+                android:singleLine="true"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title" />-->
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cnic_expiry_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cnic_nicop_issue_date"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cnic_expiry_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:drawableEnd="@drawable/ic_calender"
+                android:inputType="date"
+                android:singleLine="true"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title" />-->
+
+            <TextView
+                android:id="@+id/select_doc_type_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12"
+                android:textAllCaps="true"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:textColor="@color/hbl_main_green"
+                android:text="@string/identification_document"
+                android:layout_marginTop="20dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/doc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="@dimen/margin_20">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/doc_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:entries="@array/select_array"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray_text_2"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/upload_cnic_front"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableEnd="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:text="@string/upload_front_cnic_label"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/upload_cnic_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:drawableEnd="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:text="@string/upload_back_cnic_label"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/upload_bform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:drawableEnd="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:text="@string/upload_bform"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_nominee_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50dp"
+        android:backgroundTint="@drawable/button_states"
+        android:text="@string/add"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        android:enabled="false"
+        android:textAllCaps="true"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

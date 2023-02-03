@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/app_bar"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fatca_checklist_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/fatca_checklist"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/hbl_main_green" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/full_name_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/full_name_input_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:hint="@string/full_name"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_birth_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/country_of_birth"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/country_birth_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/country_birth_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:entries="@array/select_array"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@color/hbl_main_green"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/multiple_nationalities_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/multiple_nationalities"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+           <RadioGroup
+               android:id="@+id/multiple_nationalities_radiogroup"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginHorizontal="15dp"
+               >
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/multiple_nationalities_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/gray_text"
+                android:layout_marginRight="100dp"/>
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/multiple_nationalities_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/gray_text"/>
+
+           </RadioGroup>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/nationalities_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nationality1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/nationality1"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/nationality1_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/nationality1_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/light_gray_bg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nationality2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/nationality2"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/nationality2_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/nationality2_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/light_gray_bg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nationality3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/nationality3"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/nationality3_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/nationality3_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/light_gray_bg" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/green_card_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/green_card"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/green_card_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/green_card_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/green_card_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/green_card_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/green_card_input_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:hint="@string/green_card_number"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/us_tax_resident_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/us_tax_resident"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/us_tax_resident_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/us_tax_resident_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/us_tax_resident_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/overseas_contact_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/overseas_contact_info"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/overseas_contact_info_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/overseas_contact_info_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/overseas_contact_info_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/care_of_contact_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/address_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_input_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:hint="@string/address"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/country_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/country"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/country_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/country_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/light_gray_bg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/city_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/city"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/city_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/city_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/light_gray_bg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/phone_no_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/phone_no"
+                    android:layout_marginHorizontal="20dp"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginHorizontal="20dp"
+                    android:id="@+id/phone_no_layout">
+                    <com.hbb20.CountryCodePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_textSize="@dimen/title"
+                        android:id="@+id/cc_picker"
+                        app:ccpDialog_textColor="@color/gray_text" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/phone_number_input_edittext"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@color/hbl_main_green"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mobile_number_error_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="@string/mobile_error"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="gone"
+                    android:textSize="@dimen/text_size_11" />
+
+<!--
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_number_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_number_input_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:hint="@string/phone_no"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+-->
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/foreign_citizenship_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/foreign_citizenship"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/foreign_citizenship_hint"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/foreign_citizenship_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/foreign_citizenship_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/foreign_citizenship_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/power_of_attorney_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/power_of_attorney"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/power_of_attorney_hint"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/power_of_attorney_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/power_of_attorney_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/power_of_attorney_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/transfer_funds_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/transfer_funds"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/transfer_funds_hint"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/transfer_funds_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/transfer_funds_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/transfer_funds_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/w8ben_forms_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/w8ben_forms"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/w8ben_forms_hint"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:id="@+id/w8ben_forms_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/w8ben_forms_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"
+                    android:layout_marginRight="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/w8ben_forms_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/gray_text"/>
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/w8ben_upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:text="@string/upload_w8ben_form"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/title" />
+
+                <ImageView
+                    android:id="@+id/w8ben_downloadBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    app:srcCompat="@drawable/ic_download" />
+
+                <ImageView
+                    android:id="@+id/w8ben_uploadBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    app:srcCompat="@drawable/ic_add" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/w9_upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:text="@string/upload_w9_form"
+                    android:textColor="@color/gray_text"
+                    android:layout_weight="0.6"
+                    android:textSize="@dimen/title" />
+
+                <ImageView
+                    android:id="@+id/w9_downloadBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    app:srcCompat="@drawable/ic_download" />
+
+                <ImageView
+                    android:id="@+id/w9_uploadBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    app:srcCompat="@drawable/ic_add" />
+            </LinearLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/submission_date_layout"
+                style="@style/My.TextInputLayout.FilledBox.Padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:hint="@string/date_of_submission"
+                android:layout_marginHorizontal="20dp"
+                app:endIconDrawable="@drawable/ic_calender"
+                app:endIconMode="custom"
+                app:endIconContentDescription="@string/cnic_nicop_issue_date"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/submission_date_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:inputType="date"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@drawable/button_states"
+        android:backgroundTintMode="src_in"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="30dp"
+        android:text="@string/continue1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        android:textStyle="bold"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/status_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        android:enabled="false"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/status_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continue_btn">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_green"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            app:drawableStartCompat="@drawable/ic_check_white"
+            android:text="@string/kyc_bracket"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1"
+            android:id="@+id/kyc_button"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_weight="0.25"
+            android:paddingHorizontal="15dp"
+            app:drawableStartCompat="@drawable/ic_check_white"
+            android:background="@drawable/half_rounded_green"
+            android:gravity="center"
+            android:text="@string/rpq"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1"
+            android:id="@+id/rpq_button"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="2dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_yellow"
+            android:gravity="center"
+            android:text="@string/fatca"
+            android:textColor="@color/white"
+            android:textSize="@dimen/med_text_size1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/half_rounded_gray"
+            android:gravity="center"
+            android:text="@string/crs"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/med_text_size1" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

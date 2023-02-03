@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.CustomerInformation.CustomerInformationMainFragment">
+
+    <include
+        android:id="@+id/top_header_layout"
+        layout="@layout/top_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/professional_info_label"
+        android:fillViewport="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_header_layout">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/personal_info_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:id="@+id/personal_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/title"
+                android:textStyle="normal"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                android:text="@string/personal_info_title"
+                app:layout_constraintEnd_toStartOf="@+id/right_base_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/horizonal_bar_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/hbl_light_green"
+                />
+
+            <TextView
+                android:id="@+id/select_doc_type_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12"
+                android:gravity="center_vertical"
+                android:textColor="@color/hbl_main_green"
+                android:text="@string/identification_document"
+                android:layout_marginTop="20dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/doc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/doc_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:entries="@array/select_array"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray_text_2"/>
+
+
+            <TextView
+                android:id="@+id/upload_front_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/med_text_size"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_text"
+                android:text="@string/upload_front_cnic_label"
+                android:drawableEnd="@drawable/ic_add"
+                android:layout_marginVertical="20dp"
+                android:visibility="gone"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:visibility="gone"
+                android:id="@+id/front_Id_card_view">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/front_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="20dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/front_cnic_iv"
+                        app:srcCompat="@drawable/ic_id_card"
+                        android:scaleType="fitXY"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/upload_back_cnic_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                android:text="@string/upload_back_cnic_label"
+                android:drawableEnd="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:layout_marginVertical="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toTopOf="@+id/personal_info_guideline" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/back_Id_card_view"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/back_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="20dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/back_cnic_iv"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_id_card"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/upload_bform_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                android:text="@string/upload_bform"
+                android:drawableEnd="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:layout_marginVertical="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/left_base_guideline"
+                app:layout_constraintTop_toTopOf="@+id/personal_info_guideline" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/bform_view"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bfrom_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="20dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/bform_iv"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_id_card"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="150dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="20dp"
+        android:enabled="false"
+        android:text="@string/continue1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline"
+        app:cornerRadius="5dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_nav_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="50dp" />
+
+    <TextView
+        android:id="@+id/personal_info_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/half_rounded_yellow"
+        android:gravity="center"
+        android:text="@string/personal_info_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/professional_info_label_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_nav_guideline" />
+
+    <TextView
+        android:id="@+id/professional_info_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/half_rounded_gray"
+        android:gravity="center"
+        android:layout_marginHorizontal="2dp"
+        android:text="@string/professional_info_label"
+        android:textColor="@color/gray_text"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bank_account_label_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/personal_info_label_tv"
+        app:layout_constraintTop_toTopOf="@+id/bottom_nav_guideline" />
+
+    <TextView
+        android:id="@+id/bank_account_label_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/half_rounded_gray"
+        android:gravity="center"
+        android:text="@string/bank_account_info_label"
+        android:textColor="@color/gray_text"
+        android:textSize="@dimen/med_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/professional_info_label_tv"
+        app:layout_constraintTop_toTopOf="@+id/bottom_nav_guideline" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

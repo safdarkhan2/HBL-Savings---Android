@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/dashboard_funds_value_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fund_name_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxWidth="100dp"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="0.4"
+            android:layout_marginEnd="20dp"
+            android:gravity="right"
+            android:text="HBL Financial Planning
+Fund-Active Allocation Plan"
+            android:textColor="@color/hbl_main_green"
+            android:textSize="@dimen/med_text_size1" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.6">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/units_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/ic_green_rectangle"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="65dp"
+                android:maxLines="1"
+                android:minWidth="5dp"
+                android:paddingHorizontal="5dp"
+                android:text="51.2554646"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nav_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/ic_yellow_rectangle"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="65dp"
+                android:maxLines="1"
+                android:minWidth="5dp"
+                android:paddingHorizontal="5dp"
+                android:text="25004565"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_grey_rectangle"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="65dp"
+                android:maxLines="1"
+                android:minWidth="5dp"
+                android:paddingHorizontal="5dp"
+                android:text="0.25403322"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
