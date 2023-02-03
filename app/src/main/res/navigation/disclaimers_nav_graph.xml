@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/disclaimers_nav_graph"
+    app:startDestination="@id/documentChecklistFragment">
+
+    <fragment
+        android:id="@+id/documentChecklistFragment"
+        android:name="com.hbl.amc.ui.Disclaimers.DocumentChecklistFragment"
+        android:label="DocumentChecklistFragment" >
+        <action
+            android:id="@+id/action_documentChecklistFragment_to_disclaimersFragment"
+            app:destination="@id/disclaimersFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/disclaimersFragment"
+        android:name="com.hbl.amc.ui.Disclaimers.DisclaimersFragment"
+        android:label="DisclaimersFragment" >
+        <action
+            android:id="@+id/action_disclaimersFragment_to_documentChecklistFragment"
+            app:destination="@id/documentChecklistFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+    </fragment>
+</navigation>

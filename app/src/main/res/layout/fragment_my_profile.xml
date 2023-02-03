@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/title_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/white"
+        android:elevation="5dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tool:layout_constraintEnd_toEndOf="parent"
+        tool:layout_constraintStart_toStartOf="parent"
+        tool:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:src="@drawable/ic_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/text_size_10"
+                android:layout_toEndOf="@id/back_btn"
+                android:text="@string/my_profile"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/heading2" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/light_background"
+        android:fillViewport="true"
+        tool:layout_constraintBottom_toBottomOf="parent"
+        tool:layout_constraintEnd_toEndOf="parent"
+        tool:layout_constraintHorizontal_bias="1.0"
+        tool:layout_constraintStart_toStartOf="parent"
+        tool:layout_constraintTop_toBottomOf="@+id/title_toolbar"
+        tool:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/investment_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/account_information"
+                android:textColor="@color/gray_text_2"
+                android:textSize="@dimen/heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/heading"
+                tool:cardCornerRadius="6dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/customer_info_lauout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/hbl_main_green"
+                        android:padding="20dp"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="0dp">
+
+                        <TextView
+                            android:id="@+id/user_name_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Muhammad Ahmed Ali"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/heading3"
+                            tool:layout_constraintStart_toStartOf="parent"
+                            tool:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/name_label_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_label"
+                            android:textColor="@color/transparent_colour_2"
+                            android:textSize="@dimen/title"
+                            tool:layout_constraintStart_toStartOf="parent"
+                            tool:layout_constraintTop_toBottomOf="@+id/user_name_tv" />
+
+                        <TextView
+                            android:id="@+id/cnic_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/dummy_cnic_label"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/title"
+                            tool:layout_constraintEnd_toStartOf="@+id/account_number_tv"
+                            tool:layout_constraintStart_toStartOf="parent"
+                            tool:layout_constraintTop_toBottomOf="@+id/name_label_tv" />
+
+                        <TextView
+                            android:id="@+id/account_number_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="BAHL0000000000000000"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            tool:layout_constraintEnd_toEndOf="parent"
+                            tool:layout_constraintStart_toEndOf="@+id/cnic_tv"
+                            tool:layout_constraintTop_toBottomOf="@+id/name_label_tv" />
+
+                        <TextView
+                            android:id="@+id/bank_label_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cnic_nicp_no_label"
+                            android:textColor="@color/transparent_colour_2"
+                            android:textSize="@dimen/title"
+                            tool:layout_constraintEnd_toStartOf="@+id/folio_no_label"
+                            tool:layout_constraintStart_toStartOf="parent"
+                            tool:layout_constraintTop_toBottomOf="@+id/cnic_tv" />
+
+                        <TextView
+                            android:id="@+id/folio_no_label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dummy_iban_label"
+                            android:textColor="@color/transparent_colour_2"
+                            android:textSize="@dimen/title"
+                            tool:layout_constraintEnd_toEndOf="parent"
+                            tool:layout_constraintStart_toEndOf="@+id/bank_label_tv"
+                            tool:layout_constraintTop_toBottomOf="@+id/account_number_tv" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Available Investment Limit"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/title" />
+
+                        <TextView
+                            android:id="@+id/inv_limit_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:text="Rs.500,000"
+                            android:textColor="@color/hbl_main_green"
+                            android:textSize="@dimen/heading" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView1"
+                tool:cardCornerRadius="6dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/joint_holder_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ABID RAFIQ GHAZI / RUBINA NASREEN"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/heading3" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/filer_exempt_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="5dp"
+                    tool:cardCornerRadius="6dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/filer_status_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Filer"
+                            android:textColor="@color/hbl_main_green"
+                            android:textSize="@dimen/heading3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/atl_status"
+                            android:textColor="@color/gray_text_2"
+                            android:textSize="@dimen/title" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="5dp"
+                    tool:cardCornerRadius="6dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/zakat_status_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exempt"
+                            android:textColor="@color/hbl_main_green"
+                            android:textSize="@dimen/heading3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/zakat_status"
+                            android:textColor="@color/gray_text_2"
+                            android:textSize="@dimen/title" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/applicable_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filer_exempt_layout">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="5dp"
+                    tool:cardCornerRadius="6dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="20dp">
+
+                        <TextView
+                            android:id="@+id/tax_status_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reason"
+                            android:textColor="@color/hbl_main_green"
+                            android:textSize="@dimen/heading3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="CGT Status/Tax Status"
+                            android:textColor="@color/gray_text_2"
+                            android:textSize="@dimen/title" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="5dp"
+                    tool:cardCornerRadius="6dp">
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/edit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="@dimen/title"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:textColor="@color/hbl_main_green"
+                android:drawableStart="@drawable/ic_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/applicable_layout" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/customer_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/rounded_bg_2"
+                android:elevation="1dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_btn">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bank"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:hint="@string/bank_name">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bank_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/iban"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:hint="IBAN NUMBER">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/iban_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dividend_mode"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:hint="DIVIDEND MODE">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/dividend_mode_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_no"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:hint="@string/phone_no">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_no_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:hint="@string/email_address_label">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mailing_address"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:hint="@string/mailing_address__label">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mailing_address_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/rpq_score_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:background="@color/hbl_main_green"
+                android:paddingVertical="20dp"
+                android:weightSum="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customer_info_layout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/risk_indicator_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4">
+
+                    <!--
+                                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                                            android:id="@+id/rpq_score_progress"
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            app:trackThickness="8dp"
+                                            app:trackCornerRadius="10dp"
+                                            android:layout_gravity="center"
+                                            app:indicatorSize="100dp"
+                                            app:indicatorColor="@color/hbl_light_green"
+                                            app:trackColor="@color/light_gray_bg"
+                                            android:progress="0"/>
+                    -->
+                    <com.hbl.amc.utils.RiskIndicator
+                        android:id="@+id/risk_indicator"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_rpq_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:gravity="center"
+                        android:minWidth="30dp"
+                        android:minHeight="30dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/med_text_size2"
+                        app:layout_constraintBottom_toBottomOf="@id/risk_indicator"
+                        app:layout_constraintEnd_toEndOf="@id/risk_indicator"
+                        app:layout_constraintStart_toStartOf="@id/risk_indicator"
+                        app:layout_constraintTop_toTopOf="@id/risk_indicator" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rpq_score"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/heading3" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rpqScoreMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/title" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/red_dot"
+                            android:drawablePadding="10dp"
+                            android:text="High"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:drawableStart="@drawable/yellow_dot"
+                            android:drawablePadding="10dp"
+                            android:text="Medium"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:drawableStart="@drawable/light_green_dot"
+                            android:drawablePadding="10dp"
+                            android:text="Low"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/white_border_transparent_bg"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="7dp"
+                        android:text="CHANGE"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mutual_funds_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/mutual_funds"
+                android:textAlignment="center"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rpq_score_layout" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/hbl_main_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mutual_funds_tv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_mutual_funds_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pending_docs_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/pending_docs_label"
+                android:textColor="@color/gray_text_2"
+                android:textSize="@dimen/heading3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_mutual_funds_rv" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_pending_documents_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pending_docs_label" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/update_docs_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/update_docs_label"
+                android:textColor="@color/gray_text_2"
+                android:textSize="@dimen/heading3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_pending_documents_rv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_updated_documents_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/update_docs_tv" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_btn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="20dp"
+                android:backgroundTint="@drawable/button_states"
+                android:enabled="true"
+                android:text="@string/save_label"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1"
+                android:textStyle="bold"
+                app:cornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_updated_documents_rv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

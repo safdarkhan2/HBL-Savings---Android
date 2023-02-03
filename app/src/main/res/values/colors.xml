@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hbl_main_green">#008269</color>
+    <color name="hbl_light_green">#229E83</color>
+<!--    <color name="hbl_light_green">#01A587</color>-->
+<!--    <color name="black">#000000</color>-->
+<!--    <color name="white">#FFFFFF</color>-->
+    <color name="white_alpha">#9CFFFFFF</color>
+    <color name="red">#ed5149</color>
+<!--    <color name="error_red">#98001F</color>-->
+    <color name="yellow_theme">#FDC211</color>
+    <color name="light_green">#F2F9F8</color>
+    <color name="light_green_2">#E5FEFA</color>
+    <color name="light_background">#FBFBFC</color>
+    <color name="gray_text">#576167</color>
+    <color name="gray_text_2">#B2B2B3</color>
+    <color name="progress_indicator_green">#5BAF9E</color>
+    <color name="progress_light_green">#87D353</color>
+    <color name="progress_light_gray">#DDDDEE</color>
+<!--    <color name="gray_text_3">#646D72</color>-->
+    <color name="light_gray">#EEEEEE</color>
+    <color name="light_gray_bg">#E0E0E1</color>
+    <color name="light_gray_bg2">#E8E8E8</color>
+    <color name="dash_colour">#727272</color>
+    <color name="transparent_colour">#AAB7CAC7</color>
+    <color name="transparent_colour_2">#AAFFFFFF</color>
+
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+
+
+
+<!--    ML Kit Colours, add your colours above this section-->
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="lighter_grey">#DDDDDD</color>
+    <color name="dark">#9A000000</color>
+    <color name="home_page_mode_item_subtitle">#CCFFFFFF</color>
+    <color name="reticle_ripple">#9AFFFFFF</color>
+    <color name="bounding_box_gradient_start">#00FFFFFF</color>
+    <color name="bounding_box_gradient_end">@color/white</color>
+    <color name="object_detected_bg_gradient_start">#00000000</color>
+    <color name="object_detected_bg_gradient_end">#66000000</color>
+    <color name="object_confirmed_bg_gradient_start">#40000000</color>
+    <color name="object_confirmed_bg_gradient_end">#A0000000</color>
+    <color name="object_reticle_outer_ring_fill">#1F000000</color>
+    <color name="object_reticle_outer_ring_stroke">#9AFFFFFF</color>
+    <color name="object_reticle_inner_ring">@color/white</color>
+    <color name="barcode_reticle_background">#99000000</color>
+    <color name="barcode_reticle_stroke">#40000000</color>
+    <color name="barcode_field_value">#797979</color>
+    <color name="barcode_field_box_stroke">#757575</color>
+    <color name="product_description">#5F6368</color>
+</resources>

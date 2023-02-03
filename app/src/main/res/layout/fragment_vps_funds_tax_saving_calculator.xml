@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:cardElevation="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/toolbar_inner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/back_iv"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/vps_tax_savings_calculator"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/heading2" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/dummy_text"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size1" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="5dp"
+                android:background="@drawable/grey_border_white_bg"
+                android:elevation="2dp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/employment_classification"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <RadioGroup
+                    android:id="@+id/employment_classification_radiogroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/employment_classification_salaried"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="50dp"
+                        android:text="@string/salaried"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size1" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/employment_classification_selfemployed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/self_employed"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size1" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/total_monhly_income_layout"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/total_monthly_taxable_income"
+                    app:endIconContentDescription="@string/cnic_nicop_issue_date">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/total_monhly_income_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/investment_amount_layout"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/intended_vps_fund_investment_amount"
+                    app:endIconContentDescription="@string/cnic_nicop_issue_date">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/investment_amount_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/continue_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginVertical="20dp"
+                    android:backgroundTint="@drawable/button_states"
+                    android:backgroundTintMode="src_in"
+                    android:text="@string/calculate"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/med_text_size1"
+                    android:textStyle="bold"
+                    app:cornerRadius="5dp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_bg"
+                    android:elevation="4dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="0.2"
+                        android:text="@string/total_tax_savings_in_pkr"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/total_investment_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="Rs.500,000"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/heading4"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                android:elevation="20dp"
+                expandableTextView:cardCornerRadius="5dp">
+                <!--            android:layout_marginVertical="5dp"-->
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/disclaimer_checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_green"
+                    android:paddingVertical="10dp"
+                    android:paddingStart="20dp"
+                    android:text="@string/disclaimer_label"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/heading2"
+                    android:textStyle="bold" />
+
+                <!-- This is the actual mandatory library attributes that must be used -->
+                <com.ms.square.android.expandabletextview.ExpandableTextView
+                    android:id="@+id/expand_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    expandableTextView:animDuration="200"
+                    expandableTextView:maxCollapsedLines="1">
+
+
+                    <ImageButton
+                        android:id="@id/expand_collapse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@android:color/transparent"
+                        android:padding="16dp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/expandable_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:lineSpacingExtra="1dp"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size1" />
+
+                </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

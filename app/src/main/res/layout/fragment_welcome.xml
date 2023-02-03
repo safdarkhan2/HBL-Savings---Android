@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_background">
+
+    <LinearLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:paddingVertical="20dp"
+            android:layout_weight="0.1"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_50"
+            app:srcCompat="@drawable/ic_logo_svg_3" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcome_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:text="@string/welcome"
+        android:visibility="gone"
+        android:textColor="@color/hbl_main_green"
+        android:textSize="@dimen/heading"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_tv"
+        app:layout_constraintVertical_bias="0.0"
+        android:id="@+id/scrollView">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/eligibilty_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_bg"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/eligible_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_check"
+                    android:drawablePadding="10dp"
+                    android:text="@string/eligibilty_criteria"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/ec_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="CNIC / NICOP / POC"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginHorizontal="5dp"/>
+
+                <TextView
+                    android:id="@+id/ec_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="For Minors: Form-B / Juvenile Card / Child Registration"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="5dp"/>
+
+                <TextView
+                    android:id="@+id/ec_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="@string/for_individual_accounts_only"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginHorizontal="5dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/min_doc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_bg"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eligibilty_layout">
+
+                <TextView
+                    android:id="@+id/min_doc_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_pin"
+                    android:drawablePadding="10dp"
+                    android:text="@string/minimum_documents_req"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/min_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="@string/cnic_front_back"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginHorizontal="5dp"/>
+
+                <TextView
+                    android:id="@+id/min_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="@string/cnic_copy"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="5dp"/>
+
+                <TextView
+                    android:id="@+id/min_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="@string/prrof_of_income"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginHorizontal="5dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/est_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/rounded_bg"
+                android:elevation="8dp"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min_doc_layout">
+
+                <TextView
+                    android:id="@+id/est_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_clock_small"
+                    android:drawablePadding="10dp"
+                    android:text="@string/estimated_time_to_open_account"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/est_time_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/green_dot"
+                    android:drawablePadding="17dp"
+                    android:text="@string/et_time"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="5dp"/>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="25dp"
+                    android:background="@color/hbl_main_green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dropdown_list"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50dp"
+        android:backgroundTint="@color/hbl_main_green"
+        android:backgroundTintMode="src_in"
+        android:text="@string/continue1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        android:layout_marginVertical="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:cornerRadius="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

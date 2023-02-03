@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HBL_AMC" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/hbl_main_green</item>
+        <item name="colorPrimaryVariant">@color/hbl_light_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/hbl_light_green</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/bliss</item>
+    </style>
+
+<!--    custom styles-->
+
+    <style name="My.TextInputLayout.FilledBox.Padding" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/MyThemeOverlayFilledPadding</item>
+    </style>
+
+    <style name="MyThemeOverlayFilledPadding">
+        <item name="editTextStyle">@style/MyTextInputEditText_filledBox_padding</item>
+    </style>
+
+    <style name="MyTextInputEditText_filledBox_padding" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <!-- left and right padding -->
+<!--        <item name="android:paddingStart" ignore="NewApi">0dp</item>-->
+<!--        <item name="android:paddingEnd" ignore="NewApi">0dp</item>-->
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+
+        <!-- top and bottom padding -->
+        <!--        <item name="android:paddingTop">28dp</item>-->
+        <!--        <item name="android:paddingBottom">12dp</item>-->
+    </style>
+
+    <style name="Widget.App.TextInputLayout.White" parent="Widget.Design.TextInputLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout.White</item>
+        <item name="hintTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+    <style name="ThemeOverlay.App.TextInputLayout.White" parent="">
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout.Green" parent="Widget.Design.TextInputLayout">
+        <item name="hintTextColor">@color/hbl_main_green</item>
+        <item name="android:textColorHint">@color/gray_text_2</item>
+    </style>
+
+</resources>

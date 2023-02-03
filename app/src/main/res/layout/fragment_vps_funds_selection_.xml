@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/app_bar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/status_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_background"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/know_you_customer_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:text="@string/vps_funds"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/vps_fund_category_title"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/select_vps_fund_category"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/vps_fund_category_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/vps_fund_categories"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vps_funds_categories_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vps_funds_rv"
+                    tools:listitem="@layout/item_fund"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="@color/hbl_main_green">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:id="@+id/risk_indicator_layout">
+
+<!--                    <com.google.android.material.progressindicator.CircularProgressIndicator-->
+<!--                        android:id="@+id/rpq_score_progress"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        app:trackThickness="8dp"-->
+<!--                        app:trackCornerRadius="10dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        app:indicatorSize="100dp"-->
+<!--                        app:indicatorColor="@color/yellow_theme"-->
+<!--                        app:trackColor="@color/light_gray_bg"-->
+<!--                        android:progress="0"/>-->
+
+                    <com.hbl.amc.utils.RiskIndicator
+                        android:id="@+id/risk_indicator"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_rpq_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:gravity="center"
+                        android:minWidth="30dp"
+                        android:minHeight="30dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/med_text_size2"
+                        app:layout_constraintBottom_toBottomOf="@id/risk_indicator"
+                        app:layout_constraintEnd_toEndOf="@id/risk_indicator"
+                        app:layout_constraintStart_toStartOf="@id/risk_indicator"
+                        app:layout_constraintTop_toTopOf="@id/risk_indicator" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rpq_score"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/heading3" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/title"
+                        android:id="@+id/rpq_msg_txt"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/red_dot"
+                            android:drawablePadding="10dp"
+                            android:text="High"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:drawableStart="@drawable/yellow_dot"
+                            android:drawablePadding="10dp"
+                            android:text="Medium"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:drawableStart="@drawable/light_green_dot"
+                            android:drawablePadding="10dp"
+                            android:text="Low"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_border_transparent_bg"
+                        android:layout_marginTop="10dp"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="7dp"
+                        android:text="CHANGE"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_investment_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingVertical="20dp"
+                android:text="Your investment limit is XYZ."
+                android:textColor="@color/black"
+                android:textSize="@dimen/title" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_background"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:text="@string/allocation_scheme_details"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/vps_funds_description"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/med_text_size1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textAllCaps="true"
+                    android:visibility="gone"
+                    android:text="@string/allocation_of_investment_tick_one"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/allocation_schemes_rv"
+                    tools:listitem="@layout/item_allocation_scheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/light_gray_bg" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continue_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="50dp"
+                android:backgroundTint="@drawable/button_states"
+                android:enabled="false"
+                android:text="@string/continue1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1"
+                android:textStyle="bold"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius="5dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/status_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/half_rounded_green"
+            android:id="@+id/products_btn">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_check_white"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:textSize="@dimen/med_text_size1"
+                android:text="Funds/Scheme\nSelection"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textSize="@dimen/med_text_size1"
+            android:text="@string/funds_selection"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/white"
+            android:background="@drawable/half_rounded_yellow"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textSize="@dimen/med_text_size1"
+            android:text="@string/other_information"
+            android:background="@drawable/half_rounded_gray"
+            android:layout_marginHorizontal="2dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

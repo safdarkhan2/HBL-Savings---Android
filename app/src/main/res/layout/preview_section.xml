@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/preview_section_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/preview_section_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="Main Section"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/heading3"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/edit_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:text="Edit"
+                android:paddingVertical="8dp"
+                android:gravity="right|center"
+                android:textSize="@dimen/title"
+                android:textColor="@color/hbl_main_green"/>
+
+            <ImageView
+                android:id="@+id/expand_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:padding="10dp"
+                app:srcCompat="@drawable/ic_plus" />
+
+            <ImageView
+                android:id="@+id/collapse_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_minus" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/hbl_main_green" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/sub_section_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

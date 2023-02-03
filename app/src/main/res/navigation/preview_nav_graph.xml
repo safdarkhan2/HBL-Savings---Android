@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/preview_nav_graph"
+    app:startDestination="@id/previewFragment">
+
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.hbl.amc.ui.Preview.PreviewFragment"
+        android:label="PreviewFragment" >
+        <action
+            android:id="@+id/action_previewFragment_to_thankYouFragment"
+            app:destination="@id/thankYouFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/thankYouFragment"
+        android:name="com.hbl.amc.ui.ThankYou.ThankYouFragment"
+        android:label="ThankYouFragment" />
+</navigation>

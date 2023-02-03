@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/app_bar"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/know_you_customer_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/know_your_customer"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/hbl_main_green" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/residential_status_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/residential_status"
+                android:textAllCaps="true"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:id="@+id/residential_layout">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/residential_status_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:entries="@array/select_array"
+                android:layout_weight="1"
+                android:background="@null" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray_text"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/financial_institution_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                android:textAllCaps="true"
+                android:text="@string/question_financial_institution"
+                android:textColor="@color/hbl_main_green"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:id="@+id/financial_layout"
+                android:visibility="gone"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/yes"
+                    android:text="@string/yes"
+                    android:paddingHorizontal="5dp"/>
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/no"
+                    android:text="@string/no"
+                    android:paddingHorizontal="5dp"
+                    android:layout_marginStart="20dp"/>
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/financial_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/reason"
+                android:visibility="gone"
+                style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title"
+                    android:id="@+id/financial_reason_et"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/declaration_regard_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="true"
+                android:text="@string/declaration_regarding_ultimate_beneficial_owner"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/text_size_12" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:id="@+id/declaration_radio_group"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dec_yes"
+                    android:text="@string/yes"
+                    android:paddingHorizontal="5dp"/>
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dec_no"
+                    android:text="@string/no"
+                    android:paddingHorizontal="5dp"
+                    android:layout_marginStart="20dp"/>
+            </RadioGroup>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/ben_layout"
+                android:visibility="gone"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ultimate Beneficial Owner Details"
+                    android:textSize="@dimen/title"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hbl_main_green"
+                    />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cnic_benif_owner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/My.TextInputLayout.FilledBox.Padding"
+                android:hint="@string/identity_number">
+
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:id="@+id/cnic_benif_owner_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title"
+                    app:allowed_chars="1234567890"
+                    app:mask="#####-#######-#" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ben_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/name_label"
+                    style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title"
+                        android:textAllCaps="true"
+                        android:id="@+id/ben_name_et"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ben_father_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/father_name_label"
+                    style="@style/My.TextInputLayout.FilledBox.Padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title"
+                        android:id="@+id/ben_father_name_et"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ben_date_of_birth"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/date_of_birth_label"
+                    app:endIconContentDescription="@string/date_of_birth_label"
+                    app:endIconDrawable="@drawable/ic_calender"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ben_date_of_birth_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ben_cnic_issue_date"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/cnic_nicop_issue_date"
+                    app:endIconContentDescription="@string/cnic_nicop_issue_date"
+                    app:endIconDrawable="@drawable/ic_calender"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ben_cnic_issue_date_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ben_cnic_expiry_date"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/cnic_nicp_expiry_label"
+                    app:endIconContentDescription="@string/cnic_nicp_expiry_label"
+                    app:endIconDrawable="@drawable/ic_calender"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ben_cnic_expiry_date_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ben_address"
+                    style="@style/My.TextInputLayout.FilledBox.Padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/address_label">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ben_address_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_background"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gender_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/relationship_with_customer"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12"
+                    android:textAllCaps="true"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ben_relationship_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/ben_relationship_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:entries="@array/select_array"
+                        android:spinnerMode="dropdown" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/hbl_main_green" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nominees_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/next_of_kin"
+                android:gravity="center_vertical"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:drawableEnd="@drawable/ic_add"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/nominees_rv"
+                android:nestedScrollingEnabled="false" />
+
+<!--
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/add_more_nominees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/add_nominee"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textStyle="bold" />
+-->
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continue_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50dp"
+        android:backgroundTint="@drawable/button_states"
+        android:text="@string/continue1"
+        android:enabled="false"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        app:layout_constraintBottom_toTopOf="@+id/status_layout"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/status_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continue_btn">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textSize="@dimen/med_text_size1"
+            android:text="@string/kyc_bracket"
+            android:textColor="@color/white"
+            android:background="@drawable/half_rounded_yellow"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textSize="@dimen/med_text_size1"
+            android:text="@string/rpq"
+            android:textColor="@color/white"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/half_rounded_gray"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textSize="@dimen/med_text_size1"
+            android:text="@string/fatca"
+            android:textColor="@color/white"
+            android:background="@drawable/half_rounded_gray"
+            android:layout_marginHorizontal="2dp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textSize="@dimen/med_text_size1"
+            android:text="@string/crs"
+            android:textColor="@color/white"
+            android:background="@drawable/half_rounded_gray"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

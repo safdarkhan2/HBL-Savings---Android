@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/product_info_nav_graph"
+    app:startDestination="@id/productSelectionFragment">
+
+    <fragment
+        android:id="@+id/productSelectionFragment"
+        android:name="com.hbl.amc.ui.productInformation.ProductSelectionFragment"
+        android:label="ProductSelectionFragment" >
+        <action
+            android:id="@+id/action_productSelectionFragment_to_mutualFundsSelectionFragment"
+            app:destination="@id/mutualFundsSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_productSelectionFragment_to_vpsFundsSelectionFragment"
+            app:destination="@id/vpsFundsSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mutualFundsSelectionFragment"
+        android:name="com.hbl.amc.ui.productInformation.MutualFundsSelectionFragment"
+        android:label="MutualFundsSelectionFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/vpsFundsSelectionFragment"
+        android:name="com.hbl.amc.ui.productInformation.VPSFundsSelectionFragment"
+        android:label="VPSFundsSelectionFragment" >
+        <action
+            android:id="@+id/action_vpsFundsSelectionFragment_to_productOtherInfoFragment"
+            app:destination="@id/productOtherInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/productOtherInfoFragment"
+        android:name="com.hbl.amc.ui.productInformation.ProductOtherInfoFragment"
+        android:label="ProductOtherInfoFragment">
+        <action
+            android:id="@+id/action_productOtherInfoFragment_to_productSelectionFragment"
+            app:destination="@id/productSelectionFragment"
+            app:popUpTo="@+id/productSelectionFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

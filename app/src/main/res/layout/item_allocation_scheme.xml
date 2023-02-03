@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/volatility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="15dp">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volatility"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/title" />
+
+        <ImageButton
+            android:id="@+id/img_volatility_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_arrow_down"
+            android:background="@android:color/transparent"
+            android:padding="16dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider_volatility"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/light_gray_bg" />
+
+<!--    Volatility container-->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/volatility_container"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@drawable/grey_border_white_bg">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/equity_subfund_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
+                android:layout_marginHorizontal="-3dp"
+                style="@style/Widget.App.TextInputLayout.Green">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/equity_subfund_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/equity_subfund_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:text="(Minimum Allocation 10%)"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/debit_subfund_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="none"
+                android:layout_marginHorizontal="-3dp"
+                style="@style/Widget.App.TextInputLayout.Green">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/debit_subfund_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/debit_subfund_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:text="(Minimum Allocation 60%)"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/market_subfund_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="none"
+                android:layout_marginHorizontal="-3dp"
+                style="@style/Widget.App.TextInputLayout.Green">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/market_subfund_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/title"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/market_subfund_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:text="(Minimum Allocation 15%)"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_12" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/grey_border_white_bg">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/equity_sub_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/half_rounded_light_green_up"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/equity_sub_fund_title"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/equity_sub_fund"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/equity_sub_fund_txt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Nil or Allocation 0%"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/text_size_12" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/debit_sub_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/half_rounded_light_green_up"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/debit_sub_fund_title"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/debit_sub_fund"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/debit_sub_fund_txt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Nil or Allocation 0%"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/text_size_12" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/money_market_sub_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/half_rounded_light_green_up"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/money_market_sub_fund_title"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/money_market_sub_fund"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/money_market_sub_fund_txt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Nil or Allocation 0%"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/text_size_12" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/total_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/text_size_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/total_txt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="100%"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/text_size_12" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+<!--    Lifecycle allocation-->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lifecycle_allocation_container"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Fixed% Allocation as per Offering Document of the Fund."
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/med_text_size1" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/life_allocation_18_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:background="@drawable/grey_border_white_bg">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/half_rounded_light_green_up"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="Age 18-30 years"
+                    android:textColor="@color/hbl_main_green"
+                    android:textSize="@dimen/med_text_size1" />
+
+                <ImageButton
+                    android:id="@+id/img_life_allocation_18_30_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_arrow_up"
+                    android:background="@android:color/transparent" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/equity_sub_fund_lifecycle_title"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/equity_sub_fund_lifecycle_txt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray_bg" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_green"
+                    android:layout_marginHorizontal="1dp"
+                    android:paddingHorizontal="19dp"
+                    android:paddingVertical="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/debit_sub_fund_lifecycle_title"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/debit_sub_fund_lifecycle_txt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray_bg" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/market_sub_fund_lifecycle_title"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/market_sub_fund_lifecycle_txt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/half_rounded_light_green_bottom"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="100%"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/text_size_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

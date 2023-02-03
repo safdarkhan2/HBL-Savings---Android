@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginHorizontal="15dp"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/city_label"
+                android:src="@drawable/ic_close_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/title_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_otp_icon"
+                android:elevation="8dp"
+                android:contentDescription="@string/city_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/close_btn" />
+
+            <TextView
+                android:id="@+id/otp_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/otp_title_label"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/med_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_icon" />
+
+            <TextView
+                android:id="@+id/otp_detail_msg_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/otp_detail_label"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otp_title_tv" />
+
+            <TextView
+                android:id="@+id/otp_detail_msg_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                android:text="@string/otp_sub_detail_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otp_detail_msg_tv" />
+
+            <TextView
+                android:id="@+id/timer_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/otp_timer_label"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/med_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otp_detail_msg_tv2" />
+
+            <com.chaos.view.PinView
+                android:id="@+id/pin_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:viewType="line"
+                android:layout_marginTop="24dp"
+                app:itemCount="6"
+                android:inputType="numberPassword"
+                style="@style/PinWidget.PinView"
+                app:itemHeight="30dp"
+                app:itemSpacing="10dp"
+                app:cursorColor="@color/hbl_main_green"
+                android:textColor="@color/hbl_main_green"
+                app:itemWidth="30dp"
+                android:cursorVisible="true"
+                app:lineColor="@color/gray_text"
+                android:paddingBottom="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timer_tv" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/resend_otp_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/half_rounded_green_outline_bg"
+                android:enabled="false"
+                android:text="@string/resend_label"
+                android:textAllCaps="false"
+                android:textColor="@color/hbl_main_green"
+                app:layout_constraintEnd_toStartOf="@+id/otp_verify_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pin_view" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/otp_verify_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/normal_btn_2"
+                android:text="@string/verify_label"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/resend_otp_btn"
+                app:layout_constraintTop_toBottomOf="@+id/pin_view" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

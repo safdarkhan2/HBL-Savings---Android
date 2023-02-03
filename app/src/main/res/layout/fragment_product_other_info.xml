@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.productInformation.ProductOtherInfoFragment">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_background"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/know_you_customer_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/other_information"
+                android:textColor="@color/hbl_main_green"
+                android:textSize="@dimen/title"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/hbl_main_green" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/more_information_label"
+                android:textColor="@color/gray_text"
+                android:visibility="gone"
+                android:textSize="@dimen/med_text_size" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ntn_no"
+                style="@style/My.TextInputLayout.FilledBox.Padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/ntn_label">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ntn_no_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/retirement_age"
+                style="@style/My.TextInputLayout.FilledBox.Padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/retirement_label">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/retirement_age_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_background"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/title" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@drawable/button_states"
+        android:text="@string/continue1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/med_text_size1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/status_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        android:enabled="false"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/status_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continue_btn">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:background="@drawable/half_rounded_green"
+            android:orientation="horizontal"
+            android:id="@+id/products_btn">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/text_size_12"
+                android:layout_height="@dimen/text_size_12"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_check_white"
+                android:layout_marginEnd="5dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Funds/Scheme\nSelection"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="2dp"
+            android:background="@drawable/half_rounded_green"
+            android:orientation="horizontal"
+            android:id="@+id/funds_btn">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/text_size_12"
+                android:layout_height="@dimen/text_size_12"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_check_white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/funds_selection"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:background="@drawable/half_rounded_yellow"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/other_information"
+                android:textColor="@color/white"
+                android:textSize="@dimen/med_text_size1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

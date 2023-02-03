@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/investmentFragment"
+        android:name="com.hbl.amc.ui.self_service.InvestmentFragment"
+        android:label="InvestmentFragment"
+        tools:layout="@layout/fragment_investment" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.hbl.amc.ui.Profile.MyProfileFragment"
+        android:label="MyProfileFragment" />
+    <fragment
+        android:id="@+id/assetClassWisePortfolioFragment"
+        android:name="com.hbl.amc.ui.self_service.AssetClassWisePortfolioFragment"
+        android:label="AssetClassWisePortfolioFragment" />
+    <fragment
+        android:id="@+id/conversionFragment"
+        android:name="com.hbl.amc.ui.self_service.ConversionFragment"
+        android:label="ConversionFragment" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.hbl.amc.ui.self_service.DashboardFragment"
+        android:label="DashboardFragment" />
+    <fragment
+        android:id="@+id/pledgeFragment"
+        android:name="com.hbl.amc.ui.self_service.PledgeFragment"
+        android:label="PledgeFragment" />
+    <fragment
+        android:id="@+id/redemptionFragment"
+        android:name="com.hbl.amc.ui.self_service.RedemptionFragment"
+        android:label="RedemptionFragment" />
+
+</navigation>

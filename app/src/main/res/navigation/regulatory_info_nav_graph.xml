@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/regulatory_info_nav_graph"
+    app:startDestination="@id/KYCFragment">
+
+    <fragment
+        android:id="@+id/KYCFragment"
+        android:name="com.hbl.amc.ui.RegulatoryInformation.KYCFragment"
+        android:label="KYCFragment"
+        tools:layout="@layout/fragment_kyc">
+        <action
+            android:id="@+id/action_KYCFragment_to_riskProfileQuestionnaireFragment"
+            app:destination="@id/riskProfileQuestionnaireFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_KYCFragment_to_addNomineesFragment"
+            app:destination="@id/addNomineesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNomineesFragment"
+        android:name="com.hbl.amc.ui.RegulatoryInformation.AddNomineesFragment"
+        android:label="AddNomineesFragment"
+        tools:layout="@layout/add_nominees_fragment"/>
+    <fragment
+        android:id="@+id/crsFragment"
+        android:name="com.hbl.amc.ui.RegulatoryInformation.CRSFragment"
+        android:label="CRSFragment" >
+        <action
+            android:id="@+id/action_crsFragment_to_fatcaChecklistFragment"
+            app:destination="@id/fatcaChecklistFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+        <action
+            android:id="@+id/action_crsFragment_to_riskProfileQuestionnaireFragment"
+            app:destination="@id/riskProfileQuestionnaireFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+        <action
+            android:id="@+id/action_crsFragment_to_KYCFragment"
+            app:destination="@id/KYCFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/riskProfileQuestionnaireFragment"
+        android:name="com.hbl.amc.ui.RegulatoryInformation.RiskProfileQuestionnaireFragment"
+        android:label="RiskProfileQuestionnaireFragment" >
+        <action
+            android:id="@+id/action_riskProfileQuestionnaireFragment_to_fatcaChecklistFragment"
+            app:destination="@id/fatcaChecklistFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_riskProfileQuestionnaireFragment_to_KYCFragment"
+            app:destination="@id/KYCFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fatcaChecklistFragment"
+        android:name="com.hbl.amc.ui.RegulatoryInformation.FatcaChecklistFragment"
+        android:label="FatcaChecklistFragment" >
+        <action
+            android:id="@+id/action_fatcaChecklistFragment_to_crsFragment"
+            app:destination="@id/crsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fatcaChecklistFragment_to_riskProfileQuestionnaireFragment"
+            app:destination="@id/riskProfileQuestionnaireFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+        <action
+            android:id="@+id/action_fatcaChecklistFragment_to_KYCFragment"
+            app:destination="@id/KYCFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+    </fragment>
+
+</navigation>

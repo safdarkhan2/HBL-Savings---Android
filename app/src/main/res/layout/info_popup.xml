@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_close_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/eligibilty_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_bg"
+                    android:elevation="8dp"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/eligible_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_check"
+                        android:drawablePadding="10dp"
+                        android:text="@string/eligibilty_criteria"
+                        android:textAllCaps="true"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/title"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ec_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="15dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="CNIC / NICOP / POC"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size" />
+
+                    <TextView
+                        android:id="@+id/ec_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginVertical="10dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="For Minors: Form-B / Juvenile Card / Child Registration"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size" />
+
+                    <TextView
+                        android:id="@+id/ec_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="@string/for_individual_accounts_only"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/min_doc_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="20dp"
+                    android:background="@drawable/rounded_bg"
+                    android:elevation="8dp"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eligibilty_layout">
+
+                    <TextView
+                        android:id="@+id/min_doc_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_pin"
+                        android:drawablePadding="10dp"
+                        android:text="@string/minimum_documents_req"
+                        android:textAllCaps="true"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/title"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/min_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="15dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="@string/cnic_front_back"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size" />
+
+                    <TextView
+                        android:id="@+id/min_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginVertical="10dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="@string/cnic_copy"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size" />
+
+                    <TextView
+                        android:id="@+id/min_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="@string/prrof_of_income"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/est_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:visibility="gone"
+                    android:layout_marginVertical="20dp"
+                    android:background="@drawable/rounded_bg"
+                    android:elevation="8dp"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/min_doc_layout">
+
+                    <TextView
+                        android:id="@+id/est_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_clock_small"
+                        android:drawablePadding="10dp"
+                        android:text="@string/estimated_time_to_open_account"
+                        android:textAllCaps="true"
+                        android:textColor="@color/hbl_main_green"
+                        android:textSize="@dimen/title"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/est_time_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="15dp"
+                        android:drawableStart="@drawable/green_dot"
+                        android:drawablePadding="17dp"
+                        android:text="@string/et_time"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/med_text_size" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

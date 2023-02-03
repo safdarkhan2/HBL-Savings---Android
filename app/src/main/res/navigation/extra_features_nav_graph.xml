@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/extra_features_nav_graph"
+    app:startDestination="@id/contactUsFragment">
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.ContactFragment"
+        android:label="ContactFragment" />
+    <fragment
+        android:id="@+id/letUsCallYouFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.LetUsCallYouFragment"
+        android:label="LetUsCallYouFragment" />
+    <fragment
+        android:id="@+id/retirementIncomeCalculatorFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.RetirementIncomeCalculatorFragment"
+        android:label="RetirementIncomeCalculatorFragment" />
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.ReportsFragment"
+        android:label="ReportsFragment" />
+    <fragment
+        android:id="@+id/guidesFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.GuidesFragment"
+        android:label="GuidesFragment" />
+    <fragment
+        android:id="@+id/SIPCalculatorFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.SIPCalculatorFragment"
+        android:label="SIPCalculatorFragment" />
+    <fragment
+        android:id="@+id/futureValueCalculatorFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.FutureValueCalculatorFragment"
+        android:label="FutureValueCalculatorFragment" />
+    <fragment
+        android:id="@+id/documentsFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.DocumentsFragment"
+        android:label="DocumentsFragment" />
+    <fragment
+        android:id="@+id/fundsPricesFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.FundsPricesFragment"
+        android:label="FundsPricesFragment" />
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.FaqFragment"
+        android:label="FaqFragment" />
+    <fragment
+        android:id="@+id/faqMutualFundsFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.FaqMutualFundsFragment"
+        android:label="FaqMutualFundsFragment" />
+    <fragment
+        android:id="@+id/mutualFundsTaxSavingCalculatorFragment"
+        android:name="com.hbl.amc.ui.ExtraFeatures.MutualFundsTaxSavingCalculatorFragment"
+        android:label="MutualFundsTaxSavingCalculatorFragment" />
+    <fragment
+        android:id="@+id/VPSFundsTaxSavingCalculator"
+        android:name="com.hbl.amc.ui.ExtraFeatures.VPSFundsTaxSavingCalculator"
+        android:label="VPSFundsTaxSavingCalculator" />
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.hbl.amc.ui.VideoCall.TestFragment"
+        android:label="TestFragment" />
+</navigation>

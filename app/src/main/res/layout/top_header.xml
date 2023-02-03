@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:paddingVertical="20dp"
+            android:layout_weight="0.1"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_50"
+            android:layout_weight="0.8"
+            app:srcCompat="@drawable/ic_logo_svg_3" />
+
+        <ImageView
+            android:id="@+id/info_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_info"
+            android:paddingVertical="20dp"
+            android:layout_weight="0.1"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/progressbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:weightSum="9"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:progress="100"
+            app:trackCornerRadius="20dp"
+            android:id="@+id/progressbar1"/>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:progress="100"
+            app:trackCornerRadius="20dp"
+            android:id="@+id/progressbar2"/>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:progress="65"
+            app:trackCornerRadius="20dp"
+            android:id="@+id/progressbar3"/>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginHorizontal="10dp"
+            android:progress="0"
+            app:trackCornerRadius="20dp"
+            android:id="@+id/progressbar4"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/progress"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar"
+            app:layout_constraintStart_toEndOf="@+id/progressbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/hbl_main_green"
+            android:gravity="center"
+            android:text="65%"
+            android:textStyle="bold"
+            android:textSize="@dimen/med_text_size"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/progressbar_container"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/hbl_main_green"
+        android:text="@string/regulatory_information"
+        android:textStyle="normal"
+        android:textSize="@dimen/heading2"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/step_tv"
+        app:layout_constraintTop_toBottomOf="@+id/progressbar_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/gray_text"
+        android:text="Step 3/4"
+        android:textStyle="bold"
+        android:background="@drawable/yellow_border_bg"
+        android:textSize="@dimen/text_size_10"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:padding="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

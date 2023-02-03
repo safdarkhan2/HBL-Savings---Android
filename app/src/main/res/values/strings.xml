@@ -1,0 +1,630 @@
+<resources>
+    <string name="app_name">HBL Savings</string>
+    <string name="success">Success</string>
+    <string name="oops">Oops</string>
+    <string name="welcome">Welcome!</string>
+    <string name="eligibilty_criteria">Eligibility Criteria</string>
+    <string name="cnic">CNIC/NICOP/Pakistan Origin Card</string>
+    <string name="active_bank_account">Active Bank Account/E-Wallet account in Pakistan</string>
+    <string name="for_individual_accounts_only">For Individual Accounts only</string>
+    <string name="minimum_documents_req">Minimum Documents Required</string>
+    <string name="cnic_front_back">CNIC (Front &amp; Back)</string>
+    <string name="cnic_copy">CNIC Copy / B-Form of the Nominee </string>
+    <string name="prrof_of_income">Proof of Income</string>
+    <string name="estimated_time_to_open_account">Estimated Time to Open Account</string>
+    <string name="et_time">5 Minutes</string>
+    <string name="continue1">Continue</string>
+    <string name="regulatory_information">Regulatory Information</string>
+    <string name="know_your_customer">Know Your Customer (KYC)</string>
+    <string name="residential_status">Pakistan Residential Status</string>
+    <string name="question_financial_institution">Has any financial institution ever refused to open your account? </string>
+    <string name="next_of_kin">Next of Kin</string>
+    <string name="full_name_as_per_cnic">FULL NAME AS PER CNIC</string>
+    <string name="relationship">Relationship</string>
+    <string name="share">Share %</string>
+    <string name="cnic_nicop_bform">CNIC/NICOP/B-FORM NUMBER</string>
+    <string name="cnic_nicop_issue_date">IDENTITY ISSUE DATE</string>
+    <string name="cnic_nicop_expiry">CNIC/NICOP EXPIRY</string>
+    <string name="upload_nominee_cnic">Upload Nominee CNIC</string>
+    <string name="add_more_nominees">Add More Nominees</string>
+    <string name="kyc_bracket">KYC</string>
+    <string name="personal_info">Personal</string>
+    <string name="professional_info">Professional</string>
+    <string name="ban_account_info">Bank Details</string>
+    <string name="rpq">RPQ</string>
+    <string name="fatca">FATCA</string>
+    <string name="preview">PREVIEW</string>
+    <string name="crs">CRS</string>
+    <string name="crs_title">CRS Declaration</string>
+
+    <string name="reason">Reason</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="next_of_kin_info">Next Of Kin Details</string>
+    <string name="product_selection">Product Selection</string>
+    <string name="products">Products</string>
+    <string name="funds_selection">Funds Selection</string>
+    <string name="other_information">Other Information</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</string>
+    <string name="select">Select</string>
+    <string name="select_from_date_first">Please select From date first</string>
+    <string name="rpq_score">RPQ SCORE</string>
+    <string name="mutual_funds">Mutual Funds</string>
+    <string name="other_funds">Other Funds</string>
+    <string name="vps_voluntary_pension_scheme_funds">VPS (Voluntary Pension Scheme) Funds</string>
+    <string name="document_checklist_small">Document Checklist</string>
+    <string name="allocation_scheme_details">Allocation scheme details</string>
+    <string name="vps_funds_description">Please select an option below and specify allocation percentages.</string>
+    <string name="allocation_of_investment_tick_one">ALLOCATION OF INVESTMENT (TICK ONE)</string>
+    <string name="high_volatility">High Volatility</string>
+    <string name="equity_sub_fund">Equity Sub-Fund</string>
+    <string name="debit_sub_fund">Debt Sub-Fund</string>
+    <string name="money_market_sub_fund">Money Market Sub-Fund</string>
+    <string name="medium_volatility">Medium Volatility</string>
+    <string name="low_volatility">Low Volatility</string>
+    <string name="lower_volatility">Lower Volatility</string>
+    <string name="lifecycle_allocation">Lifecycle Allocation</string>
+    <string name="customized_allocation_scheme">Customized Allocation Scheme</string>
+    <string name="total">Total</string>
+
+    <array name="entries_residential_status">
+        <item>Select</item>
+        <item>Resident</item>
+        <item>Non-Resident</item>
+    </array>
+
+    <array name="boolean_array">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+    </array>
+
+    <array name="select_array">
+        <item>Select</item>
+    </array>
+
+    <array name="doc_type_array">
+        <item>Select</item>
+        <item>CNIC</item>
+        <item>NICOP</item>
+        <item>B-Form</item>
+    </array>
+
+    <array name="relationship_array">
+        <item>Select</item>
+        <item>Parent</item>
+        <item>Grandparent</item>
+        <item>Child</item>
+        <item>Siblings</item>
+        <item>Spouse</item>
+    </array>
+
+    <array name="crs_reasons">
+        <item>Select</item>
+        <item>Does not issue TINs to its residents</item>
+        <item>The Account Holder is unable to obtain a TIN</item>
+        <item>No TIN is required</item>
+    </array>
+
+    <array name="cash_funds_type">
+        <item>Cash Fund</item>
+        <item>HBL Cash Fund</item>
+        <item>HBL Energy Fund</item>
+        <item>HBL Government Security Fund</item>
+        <item>HBL Growth Fund-Class B</item>
+        <item>Other</item>
+    </array>
+
+    <array name="occupation">
+        <item>Select</item>
+        <item>Govt. Employee</item>
+        <item>Businessman</item>
+        <item>Private Service</item>
+        <item>Housewife</item>
+        <item>Student</item>
+        <item>Retired</item>
+        <item>Professional</item>
+        <item>Others</item>
+    </array>
+
+
+    <string name="bank_account_info">Bank Details</string>
+    <string name="country_of_tax_residence">COUNTRY OF TAX RESIDENCE</string>
+    <string name="tin_no">TIN NO</string>
+    <string name="bank_account_number">IBAN</string>
+    <string name="account_title">ACCOUNT TITLE</string>
+    <string name="bank_name">BANK NAME</string>
+    <string name="branch_name">BRANCH NAME</string>
+    <string name="city">CITY</string>
+    <string name="branch_city">BRANCH CITY</string>
+    <string name="country">COUNTRY</string>
+    <string name="country_of_birth">COUNTRY OF BIRTH</string>
+    <string name="risk_profile_questionnaire">Risk Profile Questionnaire</string>
+    <string name="age_in_year">AGE (IN YEARS)</string>
+    <string name="risk_tolerence_level">RISK TOLERANCE LEVEL</string>
+    <string name="current_monthly_savings">CURRENTLY MONTHLY SAVINGS</string>
+    <string name="occupation">OCCUPATION</string>
+    <string name="dividend_payout">DIVIDEND PAYOUT</string>
+    <string name="investment_objective">INVESTMENT OBJECTIVES</string>
+    <string name="knowledge_of_investment">KNOWLEDGE OF INVESTMENT</string>
+    <string name="investment_horizon">INVESTMENT HORIZON</string>
+    <string name="further_investment_intention">FOR FURTHER INVESTMENT I INTEND TO TAKE</string>
+    <string name="incur_initial_loss">IF I INCUR SUBSTANTIAL INITIAL LOSS I WOULD</string>
+    <string name="invest_keep_money">I USUALLY INVEST/KEEP MY MONEY IN</string>
+    <string name="fatca_checklist">FATCA Declaration</string>
+    <string name="multiple_nationalities">DO YOU HAVE MULTIPLE NATIONALITIES?</string>
+    <string name="green_card">DO YOU CURRENTLY HOLD U.S GREEN CARD OR U.S PERMANENT RESIDENCY?</string>
+    <string name="us_tax_resident">ARE YOU A TAX RESIDENT IN U.S?</string>
+    <string name="overseas_contact_info">OVERSEAS/CARE-OF-CONTACT DETAILS</string>
+    <string name="foreign_citizenship">FOREIGN CITIZENSHIP OR RESIDENCY</string>
+    <string name="power_of_attorney">POWER OF ATTORNEY</string>
+    <string name="transfer_funds">TRANSFER FUNDS TO AN ACCOUNT</string>
+    <string name="foreign_citizenship_hint">Have you renounced your foreign citizenship or residency?</string>
+    <string name="power_of_attorney_hint">Have you given power of attorney to any person residing overseas?</string>
+    <string name="transfer_funds_hint">Have you given any standing instruction to transfer funds to an account in U.S?</string>
+    <string name="w8ben_forms">W8BEN/W9 FORMS</string>
+    <string name="w8ben_forms_hint">W8BEN/W9 forms submitted with date of submission?</string>
+    <string name="date_of_submission">DATE OF SUBMISSION</string>
+    <string name="designation">DESIGNATION</string>
+    <string name="employer_name">ORGANIZATION/EMPLOYER/BUSINESS NAME</string>
+    <string name="experience_in_year">TOTAL WORKING EXPERIENCE (YEARS)</string>
+    <string name="source_of_income">SOURCE OF INCOME</string>
+    <string name="public_figure_entity">PUBLIC FIGURE ENTITY</string>
+    <string name="choose_currency">CHOOSE CURRENCY</string>
+    <string name="avg_annual_income">AVERAGE ANNUAL INCOME</string>
+    <string name="public_figure">PUBLIC FIGURE</string>
+    <string name="upload_proof_of_income">Upload Proof Of Income</string>
+    <string name="public_figure_desc">include Senior Govt. Officials, Senior Office Bearers of Public Sector Entities, Politicians</string>
+    <string name="deal_high_value_items">Do you deal in high value items?</string>
+    <string name="zakat_deduction">ZAKAT DEDUCTION</string>
+    <string name="zakat_affidavit">Zakat Affidavit CZ-50</string>
+    <string name="lorem_ipsum">lorem ipsum dolor</string>
+    <string name="customer_information">Customer Information</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="green_card_number">GREEN CARD NUMBER</string>
+    <string name="address">ADDRESS</string>
+    <string name="phone_no">PHONE NO.</string>
+    <string name="disclaimers">Disclaimers and T&amp;Cs</string>
+    <string name="disclaimer_heading">Disclaimers</string>
+    <string name="document_checklist">DOCUMENT CHECKLIST</string>
+    <string name="send_document_via_email">You may also send this document via email later on info@hblasset.com</string>
+    <string name="not_yet">NOT YET</string>
+    <string name="yes">YES</string>
+    <string name="thank_you">THANK YOU</string>
+    <string name="complete_steps">You have successfully completed the onboarding journey.</string>
+    <string name="caution">Caution</string>
+    <string name="account_title_mismatched_from_cnic_name">*Account Title mismatched from CNIC name</string>
+    <string name="nationality1">NATIONALITY 01</string>
+    <string name="nationality2">NATIONALITY 02</string>
+    <string name="nationality3">NATIONALITY 03</string>
+    <string name="account_information">Account Information</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Strings Literals for customer information screen  -->
+    <string name="personal_info_title">Personal</string>
+    <string name="upload_front_back_cnic_label">Upload Identification Document</string>
+    <string name="upload_front_cnic_label">Upload Front</string>
+    <string name="upload_back_cnic_label">Upload Back</string>
+    <string name="upload_bform">Upload B-Form</string>
+    <string name="continue_btn_label">Continue</string>
+    <string name="personal_info_label">Personal</string>
+    <string name="professional_info_label">Professional</string>
+    <string name="bank_account_info_label">Bank Details</string>
+    <string name="send_otp_label">Send OTP</string>
+    <string name="cnic_nicp_no_label">CNIC/NICOP No.</string>
+    <string name="cnic_nicp_issue_date_label">CNIC/NICOP ISSUE DATE</string>
+    <string name="cnic_nicp_expiry_label">IDENTITY EXPIRY DATE</string>
+    <string name="name_as_per_cnic_label">NAME AS PER IDENTITY</string>
+    <string name="father_spouse_name_label">FATHER/SPOUSE NAME</string>
+    <string name="father_name_label">FATHER NAME</string>
+    <string name="cnic_issue_label">CNIC ISSUE DATE</string>
+    <string name="cnic_expiry_label">CNIC EXPIRY DATE</string>
+    <string name="relationship_with_customer">Relationship with Customer</string>
+    <string name="gender_label">GENDER</string>
+    <string name="date_of_birth_label">DATE OF BIRTH</string>
+    <string name="mother_maiden_name_label">MOTHER MAIDEN NAME</string>
+    <string name="email_address_label">EMAIL ADDRESS</string>
+    <string name="address_label">RESIDENTIAL ADDRESS</string>
+    <string name="mailing_address_is_same_label">Mailing Address is same as Residential Address</string>
+    <string name="mailing_address__label">MAILING ADDRESS</string>
+    <string name="city_label">CITY</string>
+    <string name="religion_label">Religion</string>
+    <string name="country_label">COUNTRY</string>
+    <string name="mobile_label">Mobile Number</string>
+    <string name="mobile_error">Please enter a valid Mobile Number</string>
+    <string name="mobile_ownership_label">MOBILE OWNERSHIP</string>
+    <string name="mobile_ownership_info">Video call verification required</string>
+    <string name="service_provider_bill_label">Service Provider Bill</string>
+    <string name="service_provider_bill_detail">We require Service Provider Bill</string>
+    <string name="affidavit_label">Affidavit</string>
+    <string name="lifetime_expiry_label">Life Time Expiry</string>
+    <string name="name_of_guardian">NAME OF GUARDIAN</string>
+    <string name="relationship_with_minor">RELATIONSHIP WITH MINOR</string>
+    <string name="cnic_of_guardian">CNIC NO. OF GUARDIAN</string>
+    <string name="father_name_of_guardian">GUARDIAN\'S FATHER NAME</string>
+    <string name="dob_of_guardian">GUARDIAN\'S DATE OF BIRTH</string>
+    <string name="city_of_guardian">GUARDIAN\'S CITY</string>
+    <string name="country_of_guardian">GUARDIAN\'S COUNTRY</string>
+    <string name="address_of_guardian">GUARDIAN\'S ADDRESS</string>
+    <string name="cnic_expiry_of_guardian">GUARDIAN\'s CNIC EXPIRY</string>
+    <string name="education">EDUCATION</string>
+
+
+    <!-- String Literals for OTP Dialog  -->
+    <string name="otp_title_label">OTP VERIFICATION</string>
+    <string name="otp_detail_label">An OTP (One Time Password) has\nbeen sent to </string>
+    <string name="otp_timer_label">00:00</string>
+    <string name="resend_label">Resend</string>
+    <string name="verify_label">Verify</string>
+    <string name="otp_sub_detail_label">Please enter the OTP below to verify\nyour phone number.</string>
+    <string name="agree">Agree</string>
+    <string name="disagree">Disagree</string>
+    <string name="vps_funds">VPS Funds</string>
+    <string name="no">NO</string>
+    <string name="tin_no_question">DO YOU HAVE A TIN NUMBER?</string>
+    <string name="submit">Submit</string>
+    <string name="upload_w8ben_form">Upload W8BEN Form</string>
+    <string name="upload_w9_form">Upload W9 Form</string>
+    <string name="select_vps_fund_category">Select VPS Fund Category</string>
+
+    <!-- String Literals for Login  -->
+    <string name="sign_in">Sign In</string>
+    <string name="mobile_email_folio_cnic">Mobile / Email / Folio / CNIC</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_your_password">Forgot your Password?</string>
+    <string name="touch_i_d">Touch I.D</string>
+    <string name="open_an_account">Open An Account</string>
+
+    <!-- String Literals for Other Information  -->
+    <string name="ntn_label">NTN</string>
+    <string name="more_information_label">We need just a little more information</string>
+    <string name="retirement_label">Retirement Age</string>
+
+    <!-- String Literals for Contact Us Screen -->
+    <string name="contact">Contact</string>
+    <string name="your_name_hint">Your Name</string>
+    <string name="your_email_hint">Your Email</string>
+    <string name="subject_hint">Subject</string>
+    <string name="contact_number_hint">Contact Number</string>
+    <string name="folio_number_hint">Folio Number</string>
+    <string name="feedback_type_hint">Feedback Type</string>
+    <string name="your_msg_hint">Your Message</string>
+
+    <!-- String Literals for Investment -->
+    <string name="investment_label">Investment</string>
+    <string name="customer_name_label">Talal Munir</string>
+    <string name="investment_tax_label">Invested Amount will be Net 1% FEL+Tax, based on applicable NAV</string>
+    <string name="name_label">NAME</string>
+    <string name="hbl_label">HBL</string>
+    <string name="folio_label">1234</string>
+    <string name="dummy_cnic_label">34201–0891231-8</string>
+    <string name="fund_type_label">Fund Type</string>
+    <string name="dummy_iban_no">GB92 ABCD01010 0102 0202 02</string>
+    <string name="dummy_iban_label">IBAN Number</string>
+    <string name="thousand_rupee_label">Rs.1000</string>
+    <string name="five_thousand_rupee_label">Rs.500,000</string>
+    <string name="bank_name_small_label">Bank Name</string>
+    <string name="account_number">Account Number</string>
+    <string name="min_investment_label">Minimum Investment Limit</string>
+    <string name="max_investment_label">Maximum Investment Limit</string>
+    <string name="amount_label">AMOUNT</string>
+    <string name="amount_label_small">Amount</string>
+    <string name="rpo_score_label">According to your RPO score your limit is XYZ</string>
+    <string name="select_investment_label">Payment Method</string>
+    <string name="direct_account_label">Direct Account\nDebit</string>
+    <string name="payment_service_label">Bill Payment\nService</string>
+    <string name="online_banking_label">Pay via\nOnline Banking</string>
+    <string name="direct_account_inline_label">Direct Account Debit</string>
+    <string name="payment_service_inline_label">Bill Payment Service</string>
+    <string name="online_banking_inline_label">Pay via Online Banking</string>
+    <string name="payment_instruction_label">Payment Instructions</string>
+    <string name="disclaimer_label">Disclaimer</string>
+    <string name="product_label">Product</string>
+    <string name="transfer_to_label">Fund Bank Account Number</string>
+    <string name="ibft_transfer_number_label">IBFT Transaction Reference Number</string>
+    <string name="ibft_receipt_label">IBFT Receipt</string>
+    <string name="invest_btn_label">Invest</string>
+    <string name="generate_bill_number_label">Generate Bill Number</string>
+    <string name="done_btn_label">Done</string>
+    <string name="disclaimer_body_label">I/We hereby indemnify that the decision to make</string>
+    <string name="limit_allowed_msg_label">Your payment is subjected to the limit allowed by your bank</string>
+    <string name="ok_btn_label">OK</string>
+    <string name="cancle_btn_label">Cancel</string>
+    <string name="try_again_btn_label">Try Again</string>
+    <string name="invest_later_btn_label">Invest Later</string>
+    <string name="dummy_bill_number_label">10 1234 123456 U</string>
+    <string name="unique_bill_number_label">Unique Bill Number</string>
+    <string name="bill_number_dialog_msg_label">Your Bill I.D is</string>
+    <string name="screen_shot_label"><u>Take ScreenShot</u></string>
+    <string name="joint_holder_s">Joint Holder(s)</string>
+    <string name="atl_status">ATL Status</string>
+    <string name="zakat_status">Zakat Status</string>
+
+    <!-- String Literals for Navigation Drawer -->
+    <string name="my_profile">My Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="notification">Notification</string>
+    <string name="settings">Settings</string>
+    <string name="logout">LogOut</string>
+    <string name="market_watch">Market Watch</string>
+    <string name="market_data">Market Data</string>
+    <string name="news">News</string>
+    <string name="investor_education">Investor Education</string>
+    <string name="calculator">Calculator</string>
+    <string name="fund_prices">Fund Prices</string>
+    <string name="reports">Reports</string>
+    <string name="downloads">Downloads</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="pledge_instructions">Pledge Instructions</string>
+    <string name="pledge">Pledge</string>
+    <string name="pledge_form">Pledge Form</string>
+    <string name="view"><u>View</u></string>
+    <string name="portfolio">Portfolio</string>
+    <string name="redeem">Redeem</string>
+    <string name="convert">Convert</string>
+    <string name="total_value_of_investment">Total Value of Investment</string>
+    <string name="last_transactions">Recent Transactions</string>
+    <string name="asset_class_wise_portfolio">Portfolio Composition</string>
+    <string name="value">Value</string>
+    <string name="nav">NAV</string>
+    <string name="units">Units</string>
+    <string name="show_all">Show All</string>
+    <string name="investment_analytics">Additional Details</string>
+    <string name="last_12_months">Last 12 Months</string>
+    <string name="last_9_months">Last 9 Months</string>
+    <string name="last_6_months">Last 6 Months</string>
+    <string name="last_3_months">Last 3 Months</string>
+    <string name="total_purchases">Total Purchases</string>
+    <string name="total_withdrawals">Total Withdrawals</string>
+    <string name="total_dividend">Total Dividend</string>
+    <string name="total_front_end_load_on_purchases">Total Front End Load on Purchases</string>
+    <string name="total_tax_withheld_on_dividend">Total Tax Withheld on Dividend</string>
+    <string name="total_capital_gain_tax_withheld">Total Capital Gain Tax Withheld</string>
+    <string name="now_do_you_want_to_invest">Now do you want to invest?</string>
+    <string name="redemption">Redemption</string>
+    <string name="select_funds">Select Funds</string>
+    <string name="transcations_allowed">Transcations Allowed</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="all_units">All Units</string>
+    <string name="instructions">Instructions</string>
+    <string name="process">Process</string>
+    <string name="conversion">Conversion</string>
+    <string name="from_fund">From Fund</string>
+    <string name="to_fund">To Fund</string>
+    <string name="units_type">Unit Type</string>
+    <string name="growth">Growth</string>
+    <string name="income">Income</string>
+    <string name="flexible_income_plan">Flexible Income Plan</string>
+    <string name="fixed_income_plan">Fixed Income Plan</string>
+    <string name="specify_amount">Specify Amount</string>
+    <string name="payment_frequency">Payment Frequency</string>
+    <string name="asset_class_wise_portfolio_note"><![CDATA[Note: Purchases include Investments, Transfer-In & Conversion-In and Withdrawals include Redemption, Transfer-Out & Conversion-Out transactions.]]></string>
+    <string name="ibft_limit_per_day">IBFT Limit Per Day</string>
+
+
+    <string name="i_plan_to_keep_my_investment_for">I plan to keep my investment for</string>
+    <string name="i_have_enough_savings_to_support_my_lifestyle_for">I have enough savings to support my lifestyle for</string>
+    <string name="i_would_like_my_financial_goals_to_be_attained_in">I would like my financial goals to be attained in</string>
+    <string name="i_can_relate_myself_best_to_the_following_statement">I can relate myself best to the following statement</string>
+    <string name="for_further_investment_i_tend_to_take">For further investment I tend to take</string>
+    <string name="if_i_incur_substantial_initial_loss_i_would">If I incur substantial initial loss I would</string>
+    <string name="i_usually_invest_keep_my_money_in">I usually invest/keep my money in</string>
+    <string name="expected_income_per_transactions">Expected Investment per Transaction</string>
+    <string name="expected_investment_transactions_in_a_year">Expected Investment Value in a Year</string>
+    <string name="declaration_or_refusal_of_account_by_any_financial_institutuion">Has any financial Institution ever declined opening your account in Pakistan?</string>
+
+    <string name="identification_document">Identification Document</string>
+    <string name="messenger">Messenger</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="email_us">Email Us</string>
+    <string name="let_us_call_you">Let Us Call You!</string>
+    <string name="visit_us">Visit Us</string>
+    <string name="hbl_amc_offices">Hbl Amc Offices</string>
+    <string name="let_s_talk">Let\'s Talk</string>
+    <string name="retirement_income_calculator">Retirement Income Calculator</string>
+    <string name="select_preferred_time">Select Preferred Time</string>
+    <string name="your_query">Your Query</string>
+    <string name="current_age_in_years">Current Age In Years</string>
+    <string name="planned_retirement_age_in_years">Planned Retirement Age In Years</string>
+    <string name="retirement_period_in_years">Retirement Period In Years</string>
+    <string name="total_retirement_saving_today_in_pkr">Total Retirement Saving Today In PKR</string>
+    <string name="monthly_contribution_in_pkr">Monthly Contribution in PKR</string>
+    <string name="annual_contribution_in_pkr">Annual Contribution in PKR</string>
+    <string name="assumed_annual_return">Assumed Annual Return in %</string>
+    <string name="calculate">Calculate</string>
+    <string name="account_statement">Account Statement</string>
+    <string name="wht_certificate">WHT Certificate</string>
+    <string name="cgt_certificate">CGT Certificate</string>
+    <string name="balance_certificate">Balance Certificate</string>
+    <string name="investment_certificate">Investment Certificate</string>
+    <string name="guides">Guides</string>
+    <string name="documents">Documents</string>
+    <string name="videos">Videos</string>
+    <string name="faqs">FAQs</string>
+    <string name="future_value_calculator">Future Value Calculator</string>
+    <string name="mutual_funds_tax_savings_calculator">Mutual Funds Tax Savings Calculator</string>
+    <string name="vps_tax_savings_calculator">VPS Tax Savings Calculator</string>
+    <string name="sip_calculator">SIP Calculator</string>
+    <string name="total_monthly_taxable_income">Total Monthly Taxable Income</string>
+    <string name="savings_target_amount_in_pkr">Savings Target Amount in Pkr</string>
+    <string name="amount_of_monthly_quaterly_or_annual_contribution_required_in_pkr">Amount of monthly, quaterly or annual contribution required in pkr</string>
+    <string name="savings_tenure_in_years">Savings Tenure in Years</string>
+    <string name="savings_frequency_monthly_quaterly_yearly">Savings Frequency (Monthly/Quaterly/Yearly)</string>
+    <string name="periodic_contribution_amount_in_pkr">Periodic Contribution Amount in Pkr</string>
+    <string name="total_contributions">Total Contributions</string>
+    <string name="net_potential_gain">Net Potential Gain</string>
+    <string name="employment_classification">Employment Classification</string>
+    <string name="salaried">Salaried</string>
+    <string name="self_employed">Self Employed</string>
+    <string name="intended_mutual_fund_investment_amount">Intended Mutual Fund Investment Amount</string>
+    <string name="intended_vps_fund_investment_amount">Intended Mutual Fund Investment Amount</string>
+    <string name="total_tax_savings_in_pkr">Total Tax Savings in Pkr</string>
+    <string name="pension_funds">Pension Funds</string>
+    <string name="digital_account_opening">Digital Account Opening</string>
+    <string name="i_accept">I Accept</string>
+    <string name="instant_transfer">Instant Transfer</string>
+    <string name="invoice_payments">Invoice Payments</string>
+
+
+    <!--    <string name="camera_permission_alert">Camera Permission is required to scan you ID card and other documents and send to bank for your record.</string>-->
+    <string name="camera_permission_alert">This feature is unavailable because it requires camera permission that you denied.</string>
+    <string name="alert">Alert!</string>
+    <string name="no_app_available_view_pdf">No Application available to view this file. Please install Adobe, Microsoft Office or any other PDF viewer app to your device to view this document.</string>
+    <string name="no_app_available_view_docx">No Application available to view this file. Please install Microsoft Office or Google Docs like app to your device to view this document.</string>
+    <string name="flexible_income_label">Flexible Income Plan</string>
+    <string name="fixed_income_label">Fixed Income Plan</string>
+    <string name="specify_amount_label">SPECIFY AMOUNT</string>
+    <string name="payment_frequency_label">PAYMENT FREQUENCY</string>
+    <string name="unit_type_label">Unit Type</string>
+    <string name="growth_label">Growth</string>
+    <string name="income_label">Income</string>
+    <string name="annually_hint_label">Annually</string>
+    <string name="invest_later_label">Invest Later</string>
+    <string name="try_again_label">Try Again</string>
+    <string name="oops_label">Oops!</string>
+    <string name="insufficient_balance_msg">You have insufficient balance in your\naccount. You can also try different\ninvestment options</string>
+
+    <!-- Lets Call you Fragment String -->
+    <string name="lets_call_you_title">Let Us Call You!</string>
+    <string name="time_title">Time</string>
+    <string name="select_your_time_label">Select Preferred Time</string>
+
+
+    <!-- String Literals for My Profile Screen -->
+    <string name="applicable_label">Applicable</string>
+    <string name="dividend_mode_label">Dividend Mode</string>
+    <string name="hbl_cash_fund_label">HBL Cash Fund</string>
+    <string name="hbl_energy_fund_label">HBL Energy Fund</string>
+    <string name="hbl_govt_fund_label">HBL Government Security Fund</string>
+    <string name="hbl_growth_fund_label">HBL Growth Fund- Class B</string>
+    <string name="pending_docs_label">Pending Documents</string>
+    <string name="upload_w8ben_label">Upload W8BEN Form</string>
+    <string name="update_docs_label">Update Documents</string>
+    <string name="upload_cnic_label">Upload CNIC</string>
+    <string name="upload_proof_label">Upload Proof of Income</string>
+    <string name="save_label">Save</string>
+
+
+    <!-- String Literals for Notification Screen -->
+    <string name="notification_title">Notification</string>
+    <string name="notification_tile_title">Fixed Income Funds</string>
+    <string name="one_minute_ago_label">1 min ago</string>
+
+
+    <!-- String Literals for Fund Prices Screen -->
+    <string name="fund_prices_label">Fund Prices</string>
+    <string name="fund_prices_list_label">Conventional Mutual Funds</string>
+
+
+    <!--    ML Kit Strings, You can add other app strings above this section-->
+    <string name="entry_java_title">Java</string>
+    <string name="entry_java_subtitle">Run the MLKit Showcase written in Java.</string>
+    <string name="entry_kotlin_title">Kotlin</string>
+    <string name="entry_kotlin_subtitle">Run the MLKit Showcase written in Kotlin.</string>
+    <string name="mode_odt_live_title">Object Detection: Live Camera</string>
+    <string name="mode_odt_live_subtitle">A device’s live camera can be used to detect objects in an environment.</string>
+    <string name="mode_odt_static_title">Object Detection: Static Image</string>
+    <string name="mode_odt_static_subtitle">One or more objects can be detected from a provided image.</string>
+    <string name="mode_barcode_live_title">Barcode Scanning</string>
+    <string name="mode_barcode_live_subtitle">Read data encoded in most standard barcode formats.</string>
+    <string name="settings_title">MLKit Showcase Settings</string>
+    <string name="cd_settings_button">Settings</string>
+    <string name="cd_close_button">Back</string>
+    <string name="cd_flash_button">Toggle camera flash</string>
+    <string name="cd_photo_library_button">Upload image</string>
+    <string name="prompt_point_at_an_object">Point your camera at an object</string>
+    <string name="prompt_point_at_a_barcode">Point your camera at a barcode</string>
+    <string name="prompt_hold_camera_steady">Keep camera still for a moment</string>
+    <string name="prompt_move_camera_closer">Move closer to search</string>
+    <string name="prompt_searching">Searching&#8230;</string>
+    <string name="product_search_button">Search object</string>
+    <plurals name="bottom_sheet_title">
+        <item quantity="one">%d match found</item>
+        <item quantity="other">%d matches found</item>
+    </plurals>
+    <string name="static_image_prompt_detected_no_results">No results found</string>
+    <string name="static_image_prompt_detected_results">Tap on a dot to inspect</string>
+    <string name="static_image_card_no_result_title">No result found</string>
+    <string name="static_image_card_no_result_subtitle">Support text place holder</string>
+    <string name="static_image_preview_card_subtitle">+%d more results</string>
+
+    <!-- Strings for camera settings. -->
+    <string name="pref_category_camera">Camera</string>
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+    <string name="pref_title_rear_camera_preview_size">Rear camera preview size</string>
+
+    <!-- Strings for object detection settings. -->
+    <string name="pref_category_object_detection">Object detection</string>
+    <string name="pref_key_object_detector_enable_multiple_objects" translatable="false">odemo</string>
+    <string name="pref_title_object_detector_enable_multiple_objects">Enable multiple objects</string>
+    <string name="pref_key_object_detector_enable_classification" translatable="false">odec</string>
+    <string name="pref_title_object_detector_enable_classification">Enable classification</string>
+
+    <!-- Strings for product search settings. -->
+    <string name="pref_category_product_search">Product search</string>
+    <string name="pref_key_enable_auto_search" translatable="false">pkeas</string>
+    <string name="pref_title_enable_auto_search">Enable auto search</string>
+    <string name="pref_key_confirmation_time_in_manual_search" translatable="false">ctims</string>
+    <string name="pref_title_confirmation_time_in_manual_search">Confirmation time in manual search</string>
+    <string name="pref_summary_confirmation_time_in_manual_search">Ranges from 100ms to 1000ms</string>
+    <string name="pref_key_confirmation_time_in_auto_search" translatable="false">ctias</string>
+    <string name="pref_title_confirmation_time_in_auto_search">Confirmation time in auto search</string>
+    <string name="pref_summary_confirmation_time_in_auto_search">Ranges from 500ms to 2000ms</string>
+
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Barcode detection</string>
+    <string name="pref_key_barcode_reticle_width" translatable="false">barcode_brw</string>
+    <string name="pref_title_barcode_reticle_width">Barcode reticle width</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Relative to the camera view width, ranges from 50% to 95%</string>
+    <string name="pref_key_barcode_reticle_height" translatable="false">barcode_brh</string>
+    <string name="pref_title_barcode_reticle_height">Barcode reticle height</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Relative to the camera view height, ranges from 20% to 80%</string>
+    <string name="pref_key_enable_barcode_size_check" translatable="false">barcode_ebsc</string>
+    <string name="pref_title_enable_barcode_size_check">Enable barcode size check</string>
+    <string name="pref_summary_enable_barcode_size_check">Will prompt user to move camera closer if the detected barcode is too small</string>
+    <string name="pref_key_minimum_barcode_width" translatable="false">barcode_mbw</string>
+    <string name="pref_title_minimum_barcode_width">Minimum barcode width</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Relative to the reticle width, ranges from 20% to 80% (only applicable when barcode size check enabled)</string>
+    <string name="pref_key_delay_loading_barcode_result" translatable="false">barcode_dlbr</string>
+    <string name="pref_title_delay_loading_barcode_result">Delay loading barcode result</string>
+    <string name="pref_summary_delay_loading_barcode_result">Will show the loading spinner for 2s</string>
+    <string name="other_source_of_income">Other Source of Income</string>
+
+
+    <string name="bunyadi_bachat_label">Bunyadi Bachat</string>
+    <string name="khass_sarmayakari_label">Khaas Sarmayakari</string>
+    <string name="investment_limit_annual_label">Investment Limit (Annual)</string>
+    <string name="investment_limit_anytime_label">Investment Limit at any time</string>
+    <string name="transaction_cap_label">Transaction Cap</string>
+    <string name="profile_base_label">Profile Based</string>
+    <string name="open_account_label">Open Account</string>
+    <string name="no_limit_label">No Limit</string>
+    <string name="please_select_an_account_type">Please select account type</string>
+    <string name="bunyadi_bachat">Bunyadi Bachat</string>
+    <string name="khaas_sarmayakari">Khaas Sarmayakari</string>
+    <string name="open_account">Open Account</string>
+    <string name="investment_limit_annual">Annual Investment</string>
+    <string name="investment_limit_at_any_time">Total Investment Limit</string>
+    <string name="transaction_cap">Transaction Limit</string>
+    <string name="we_will_notify_you_once_your_account_is_approved">We will send the login details on your provided mobile number &amp; email address</string>
+    <string name="proceed">proceed</string>
+    <string name="declaration_regarding_ultimate_beneficial_owner">Are you the ultimate beneficial owner of your investments?</string>
+    <string name="cnic_number_of_beneficial_owner">CNIC NUMBER OF BENEFICIAL OWNER</string>
+    <string name="emergency_contact_no">EMERGENCY CONTACT NO.</string>
+    <string name="is_this_roshan_digital_account">Is this a Roshan Digital Account?</string>
+
+    <string name="what_s_my_password">What\'s my password?</string>
+    <string name="please_provide_your_user_information_below_to_reset_your_password">Please provide your user information below to reset your password.</string>
+    <string name="reset_password">Reset Password</string>
+
+    <string name="hbl_savings">HBL Savings</string>
+    <string name="we_want_to_verify_your_mobile_ownership_status_please_accept_this_video_call_request">We want to verify your mobile ownership status, Please accept this video call request!</string>
+    <string name="video_calling">Video Calling...</string>
+    <string name="update_date"><u>Set Date</u></string>
+    <string name="redemption_type">Redemption Type</string>
+    <string name="identity_number">IDENTITY NUMBER</string>
+    <string name="please_provide_your_valid_bank_account_title">Please provide your valid Bank Account Title</string>
+</resources>
